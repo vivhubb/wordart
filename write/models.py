@@ -26,6 +26,8 @@ class Post(models.Model):
         QUOTES = 'Q', 'Quotes'
         POEMS = 'P', 'Poems'
 
+    OWNER = ((0, "My own WordArt"), (1, "Not my WordArt"), (2, ""))
+
     category = models.CharField(max_length=256, choices=Categories.choices)
     title = models.CharField(max_length=256)
     slug = models.SlugField(unique=True)
@@ -34,8 +36,11 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     content = models.TextField()
+    ownership = models.IntegerField(choices=OWNER, default=2)
+    creator = models.CharField(max_length=256, default='')
     likes = models.ManyToManyField(
         User, related_name='writepost_like', blank=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-created_date']
