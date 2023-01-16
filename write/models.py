@@ -37,7 +37,8 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     content = models.TextField()
     ownership = models.IntegerField(choices=OWNER, default=2)
-    creator = models.CharField(max_length=256, default='')
+    creator = models.CharField(
+        max_length=256, default="Original Author's name")
     likes = models.ManyToManyField(
         User, related_name='writepost_like', blank=True)
     approved = models.BooleanField(default=False)
@@ -53,8 +54,11 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    content = models.TextField()
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments', default='')
+    name = models.CharField(max_length=256, default='name')
+    email = models.EmailField(default='email address')
+    comment = models.TextField(default='')
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
@@ -63,7 +67,7 @@ class Comment(models.Model):
         ordering = ['-created_date']
 
     def __str__(self):
-        return f"{self.content} by {self.author} on {self.created_date}"
+        return f"{self.comment} by {self.name} on {self.created_date}"
 
     def number_of_comments(self):
-        return self.content.count()
+        return self.comment.count()
