@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Post
+from .models import Post, Comment
 
 
-class About(generic.TemplateView,):
+class About(generic.TemplateView):
     def about(request):
         return render(
             request, 'write/templates/about.html')
@@ -11,9 +11,9 @@ class About(generic.TemplateView,):
 
 class WordartList(generic.ListView):
     model = Post
-    context_object_name = 'quotes_list'
+    context_object_name = 'wordart_list'
     template_name = 'wordart.html'
-    # queryset = Post.objects.order_by('-created_date')
+    queryset = Post.objects.all().order_by('-created_date')
 
 
 class Register(generic.TemplateView):

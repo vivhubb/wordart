@@ -68,6 +68,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.comment} by {self.name} on {self.created_date}"
-
-    def number_of_comments(self):
-        return self.comment.count()
