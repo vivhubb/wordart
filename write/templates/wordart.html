@@ -1,50 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block content %}
 
-    <!-- FONTAWESOME -->
-    <script src="https://kit.fontawesome.com/885f7b4dec.js" crossorigin="anonymous"></script>
+<h2>WordArt</h2>
 
-    <!-- BOOTSTRAP CSS AND JS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
-    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+<!-- FEED -->
+{% for word in wordart_list %}
+    <h6> Category: {{ word.get_category_display }} </h6>
+    <h3> Title: {{ word.title }} </h3>
+    <hr>
+    <p> {{ word.content | safe}} </p>
+    <p> {{ word.get_ownership_display }} | Original author: {{ word.creator }} </p>
+    <hr>
+    <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
+    <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
+    <p> Created on: {{ word.created_date }} </p>
+    <hr>
+    <hr>
+{% endfor %}
 
-    {% if title %}
-        <title>WordArt | {{ title }}</title>
-    {% else %}
-        <title>WordArt | words and Poems for the Soul</title>
-    {% endif %}
-
-</head>
-
-<body>
-    <!-- TITLE -->
-    <h1>WordArt</h1>
-
-    <!-- NAVBAR -->
-
-
-    <!-- FEED -->
-    {% for word in wordart_list %}
-        <h6> Category: {{ word.get_category_display }} </h6>
-        <h3> Title: {{ word.title }} </h3>
-        <hr>
-        <p> {{ word.content | safe}} </p>
-        <p> {{ word.get_ownership_display }} | Original author: {{ word.creator }} </p>
-        <hr>
-        <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp 
-        <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
-        <p> Created on: {{ word.created_date }} </p>
-        <hr>
-        <hr>
-    {% endfor %}
-
-</body>
-
-</html>
+{% endblock %}

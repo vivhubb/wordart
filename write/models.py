@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 
 # class User(models.Model):
@@ -68,3 +69,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.comment} by {self.name} on {self.created_date}"
+
+
+# class AddWordArt(ModelForm):
+#     class Meta:
+#         model = Post
+#         fields = [
+#             'category', 'title', 'author', 'content', 'ownership', 'creator']
