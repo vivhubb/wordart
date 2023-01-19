@@ -27,7 +27,15 @@
     <!-- NAVBAR -->
     <a href="{% url 'about' %}">About</a>
     <a href="/wordart">WordArt</a>
-    <a href="/register">Register</a>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'account_logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'account_signup' %}">SignUp</a> |
+        <a href="{% url 'account_login' %}">Login</a>
+    {% endif %}
+    
+    
     <hr>
 
     <!-- CREATE NEW POST -->
@@ -35,11 +43,9 @@
     <hr>
 
     {% block content %}
+
     {% endblock content %}
-
-
-    <!-- FEED -->
-
+    
 </body>
 
 </html>
