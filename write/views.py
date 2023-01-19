@@ -5,7 +5,7 @@ from .models import Post, Comment
 
 class About(generic.TemplateView):
     def about(request):
-        return render(request, 'write/templates/about.html')
+        return render(request, 'templates/about.html')
 
 
 class WordartList(generic.ListView):
@@ -18,9 +18,9 @@ class WordartList(generic.ListView):
 
 class Register(generic.TemplateView):
     def register(request):
-        return render(request, 'write/templates/register.html')
+        return render(request, 'templates/register.html')
 
 
 class PostWordArt(generic.TemplateView):
     def add_wordart(request):
-        return render(request, 'write/templates/add_wordart.html')
+        return render(request, 'templates/add_wordart.html')
