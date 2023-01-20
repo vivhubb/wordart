@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h6> Category: {{ post.get_category_display }} </h6>
+<h3> Title: {{ post.title }} </h3> 
+<p> {{ post.created_date }} </p>
+
+<p> {{ post.get_ownership_display }} | Original author: {{ post.creator }} </p>
+<p> {{ post.content | safe}} </p>
+
+<i class="fa-solid fa-heart"></i> {{ post.number_of_likes }} &nbsp
+<i class="fa-solid fa-comments"></i> {{ post.comments.count }}
+<hr>
+
+<h6>Comments:</h6>
+    {% for comment in comments %}
+    <hr>
+    <strong>{{ comment.name }}</strong> wrote:
+    {{ comment.comment | linebreaks }}
+    {{ comment.created_date }}
+    {% endfor %}
+
+{% endblock %}

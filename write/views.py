@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Post, Comment
 from .forms import CommentForm
 
@@ -17,9 +17,25 @@ class WordartList(generic.ListView):
         approved=True).order_by('-created_date')
 
 
-class Register(generic.TemplateView):
-    def register(request):
-        return render(request, 'templates/register.html')
+class PostDetail(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(approved=True)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('created_date')
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists:
+            liked = True
+
+        return render(
+            request,
+            'post_detail.html',
+            {
+                'post': post,
+                'comments': comments,
+                'likes': liked
+            }
+        )
 
 
 class PostWordArt(generic.TemplateView):

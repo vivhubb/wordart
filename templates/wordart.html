@@ -7,7 +7,9 @@
 <!-- FEED -->
 {% for word in wordart_list %}
     <h6> Category: {{ word.get_category_display }} </h6>
-    <h3> Title: {{ word.title }} </h3>
+    <a href="{% url 'post_detail' word.slug %}">
+        <h3> Title: {{ word.title }} </h3>
+    </a>
     <hr>
     <p> {{ word.content | safe}} </p>
     <p> {{ word.get_ownership_display }} | Original author: {{ word.creator }} </p>
