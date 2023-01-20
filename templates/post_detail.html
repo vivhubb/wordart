@@ -2,8 +2,10 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <h6> Category: {{ post.get_category_display }} </h6>
-<h3> Title: {{ post.title }} </h3> 
+<h3> Title: {{ post.title }} </h3>
 <p> {{ post.created_date }} </p>
 
 <p> {{ post.get_ownership_display }} | Original author: {{ post.creator }} </p>
@@ -13,12 +15,34 @@
 <i class="fa-solid fa-comments"></i> {{ post.comments.count }}
 <hr>
 
-<h6>Comments:</h6>
-    {% for comment in comments %}
-    <hr>
-    <strong>{{ comment.name }}</strong> wrote:
-    {{ comment.comment | linebreaks }}
-    {{ comment.created_date }}
-    {% endfor %}
+<h5><strong>Comments:</strong></h5>
+{% for comment in comments %}
+<hr>
+<strong>{{ comment.name }}</strong> wrote:
+{{ comment.comment | linebreaks }}
+{{ comment.created_date }}
+{% endfor %}
+
+<div class="col-md-4 card mb-4  mt-3 ">
+    <div class="card-body">
+        {% if commented %}
+        <div class="alert alert-success" role="alert">
+            We have received your comment and it is now awaiting approval.
+        </div>
+        {% else %}
+
+        {% if user.is_authenticated %}
+
+        <h4>Leave a comment:</h4>
+        <p>Logged in as: {{ user.username }}</p>
+        <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary btn btn-signup">Comment</button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
 
 {% endblock %}
