@@ -11,8 +11,25 @@
 <p> {{ post.get_ownership_display }} | Original author: {{ post.creator }} </p>
 <p> {{ post.content | safe}} </p>
 
-<i class="fa-solid fa-heart"></i> {{ post.number_of_likes }} &nbsp
-<i class="fa-solid fa-comments"></i> {{ post.comments.count }}
+<strong>
+    {% if user.is_authenticated %}
+        <form class="d-inline" action="{% url 'like_unlike' post.slug %}" method="POST">
+            {% csrf_token %}
+            {% if liked %}
+            <button type="submit" value="{{ post.slug }}" class="btn-like">
+                <i class="fas fa-heart"></i></button>
+            {% else %}
+            <button type="submit" value="{{ post.slug }}" class="btn-like">
+                <i class="far fa-heart"></i></button>
+            {% endif %}
+        </form>
+    {% else %}
+        <span class="text-secondary"><i class="far fa-heart"></i></span>
+    {% endif %}
+</strong>
+
+<span>{{ post.number_of_likes }}</span> &nbsp
+<span><i class="far fa-comments"></i> {{ post.comments.count }}</span>
 <hr>
 
 <h5><strong>Comments:</strong></h5>
