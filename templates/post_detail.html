@@ -13,18 +13,18 @@
 
 <strong>
     {% if user.is_authenticated %}
-        <form class="d-inline" action="{% url 'like_unlike' post.slug %}" method="POST">
-            {% csrf_token %}
-            {% if liked %}
-            <button type="submit" value="{{ post.slug }}" class="btn-like">
-                <i class="fas fa-heart"></i></button>
-            {% else %}
-            <button type="submit" value="{{ post.slug }}" class="btn-like">
-                <i class="far fa-heart"></i></button>
-            {% endif %}
-        </form>
+    <form class="d-inline" action="{% url 'like_unlike' post.slug %}" method="POST">
+        {% csrf_token %}
+        {% if liked %}
+        <button type="submit" value="{{ post.slug }}" class="btn-like">
+            <i class="fas fa-heart"></i></button>
+        {% else %}
+        <button type="submit" value="{{ post.slug }}" class="btn-like">
+            <i class="far fa-heart"></i></button>
+        {% endif %}
+    </form>
     {% else %}
-        <span class="text-secondary"><i class="far fa-heart"></i></span>
+    <span class="text-secondary"><i class="far fa-heart"></i></span>
     {% endif %}
 </strong>
 
@@ -43,7 +43,7 @@
 <div class="col-md-4 card mb-4  mt-3 ">
     <div class="card-body">
         {% if commented %}
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success {{ message.tags }} alert-dismissible fade show" role="alert" id="com">
             We have received your comment and it is now awaiting approval.
         </div>
         {% else %}
@@ -61,5 +61,14 @@
         {% endif %}
     </div>
 </div>
+
+<!-- JS FOR ALERT MESSAGES -->
+<script>
+    setTimeout(function () {
+        let comments = document.getElementById('com');
+        let comalert = new bootstrap.Alert(comments);
+        comalert.close();
+    }, 2200);
+</script>
 
 {% endblock %}
