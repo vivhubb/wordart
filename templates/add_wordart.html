@@ -2,6 +2,20 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <h2>Create New Wordart</h2>
+
+{% if user.is_authenticated %}
+
+    <p>Posting as: {{ user.username }}</p>
+
+    <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-secondary btn-signup">Create Post</button>
+    </form>
+
+{% endif %}
 
 {% endblock %}

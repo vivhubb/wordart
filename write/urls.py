@@ -20,8 +20,7 @@ from django.urls import path
 urlpatterns = [
     path('', views.About.as_view(template_name='about.html'), name='about'),
     path('wordart/', views.WordartList.as_view(), name='wordart'),
+    path('add/', views.add_wordart, name='add_wordart'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', views.LikeUnlike.as_view(), name='like_unlike'),
-    path('add/', views.PostWordArt.as_view(
-        template_name='add_wordart.html'), name='add_wordart')
 ]

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ModelForm
+from django.template.defaultfilters import slugify
 
 
 # class User(models.Model):
@@ -53,6 +54,11 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -71,8 +77,8 @@ class Comment(models.Model):
         return f"{self.comment} by {self.name} on {self.created_date}"
 
 
-# class AddWordArt(ModelForm):
-#     class Meta:
-#         model = Post
-#         fields = [
-#             'category', 'title', 'author', 'content', 'ownership', 'creator']
+class AddWordArt(ModelForm):
+    class Meta:
+        model = Post
+        fields = [
+            'category', 'title', 'author', 'content', 'ownership', 'creator']
