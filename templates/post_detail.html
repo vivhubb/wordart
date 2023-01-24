@@ -32,6 +32,14 @@
 <span><i class="far fa-comments"></i> {{ post.comments.count }}</span>
 <hr>
 
+{% if request.user == post.author %}
+
+    <a href="{% url 'post_update' post.slug %}">EDIT</a>
+
+{% endif %}
+
+<hr>
+
 <h5><strong>Comments:</strong></h5>
 {% for comment in comments %}
 <hr>

@@ -22,5 +22,6 @@ urlpatterns = [
     path('wordart/', views.WordartList.as_view(), name='wordart'),
     path('add/', views.add_wordart, name='add_wordart'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('<slug:slug>/post_update', views.edit_wordart, name='post_update'),
     path('like/<slug:slug>', views.LikeUnlike.as_view(), name='like_unlike'),
 ]

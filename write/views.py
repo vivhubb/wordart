@@ -108,3 +108,24 @@ def add_wordart(request):
 
     context['form'] = form
     return render(request, 'add_wordart.html', context)
+
+
+# Edit Post
+def edit_wordart(request, slug, *args, **kwargs):
+    context = {}
+    queryset = Post.objects.filter(approved=True)
+    post = get_object_or_404(queryset, slug=slug)
+    form = WordArtForm(request.POST or None, instance=post)
+
+    if form.is_valid():
+        form.save(commit=False)
+        post.approved = False
+        form.save()
+
+        messages.success(
+            request,
+            'Your request to edit was received and it is awaiting approval')
+        return HttpResponseRedirect(reverse('wordart'))
+
+    context["form"] = form
+    return render(request, 'post_update.html', context)
