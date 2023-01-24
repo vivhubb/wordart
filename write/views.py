@@ -111,9 +111,9 @@ def add_wordart(request):
 
 
 # Edit Post
-def edit_wordart(request, slug, *args, **kwargs):
+def edit_wordart(request, slug):
     context = {}
-    queryset = Post.objects.filter(approved=True)
+    queryset = Post.objects.filter(author=request.user)
     post = get_object_or_404(queryset, slug=slug)
     form = WordArtForm(request.POST or None, instance=post)
 
@@ -129,3 +129,19 @@ def edit_wordart(request, slug, *args, **kwargs):
 
     context["form"] = form
     return render(request, 'post_update.html', context)
+
+
+# Delete Post
+def delete_wordart(request, slug):
+    context = {}
+    queryset = Post.objects.filter(author=request.user)
+    post = get_object_or_404(queryset, slug=slug)
+
+    if request.method == "POST":
+        post.delete()
+        messages.success(
+            request,
+            'Your post has been deleted')
+        return HttpResponseRedirect(reverse('wordart'))
+
+    return render(request, "post_delete.html", context)

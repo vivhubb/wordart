@@ -34,7 +34,9 @@
 
 {% if request.user == post.author %}
 
-    <a href="{% url 'post_update' post.slug %}">EDIT</a>
+    <span><a href="{% url 'post_update' post.slug %}">EDIT</a></span>
+
+    <span><a href="{% url 'post_delete' post.slug %}">DELETE</a></span>
 
 {% endif %}
 
