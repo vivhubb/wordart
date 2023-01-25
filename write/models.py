@@ -4,24 +4,6 @@ from django.forms import ModelForm
 from django.template.defaultfilters import slugify
 
 
-# class User(models.Model):
-#     slug = models.SlugField(unique=True)
-#     first_name = models.CharField(max_length=256)
-#     last_name = models.CharField(max_length=256)
-#     username = models.CharField(max_length=256, unique=True)
-#     email = models.CharField(max_length=256, unique=True)
-#     password = models.CharField(max_length=256)       #characters not hidden
-#     birthday = models.DateTimeField()
-#     date_joined = models.DateTimeField(auto_now_add=True)
-#     admin = models.BooleanField(default=False)
-
-#     class Meta:
-#         ordering = ['-date_joined']
-
-#     def __str__(self):
-#         return self.username
-
-
 class Post(models.Model):
 
     class Categories(models.TextChoices):
@@ -53,11 +35,6 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        return super().save(*args, **kwargs)
 
 
 class Comment(models.Model):

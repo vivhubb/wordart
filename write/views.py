@@ -20,6 +20,7 @@ class WordartList(generic.ListView):
     template_name = 'wordart.html'
     queryset = Post.objects.all().filter(
         approved=True).order_by('-created_date')
+    queryset_comment = Comment.objects.filter(approved=True)
 
 
 # WordArt Page - Post Detail view
@@ -176,3 +177,19 @@ def edit_comment(request, slug, pk):
         "post": post
     }
     return render(request, "comment_update.html", context)
+
+
+# Delete comment
+def delete_comment(request, pk):
+    context = {}
+    queryset = Comment.objects.filter(name=request.user.username)
+    comment = get_object_or_404(queryset, pk=pk)
+
+    if request.method == "POST":
+        comment.delete()
+        messages.success(
+            request,
+            'Your comment has been deleted')
+        return HttpResponseRedirect(reverse('wordart'))
+
+    return render(request, "comment_delete.html", context)

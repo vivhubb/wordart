@@ -50,6 +50,7 @@
 
     {% if request.user.username == comment.name %}
         <span><a href="{% url 'comment_update' slug=post.slug pk=comment.pk %}">EDIT</a></span>
+        <span><a href="{% url 'comment_delete' pk=comment.pk %}">DELETE</a></span>
     {% endif %}
 {% endfor %}
 

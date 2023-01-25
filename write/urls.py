@@ -30,4 +30,9 @@ urlpatterns = [
         views.edit_comment,
         name='comment_update'
         ),
+    path(
+        '<int:pk>/comment_delete',
+        views.delete_comment,
+        name='comment_delete'
+        ),
 ]
