@@ -43,6 +43,9 @@ else:
 # ADMIN EMAIL
 ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')
 
+# ADMIN LIST
+ADMINS = [('admin', ADMIN_EMAIL)]
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -77,10 +80,6 @@ LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 4
-# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = None
-
-
-
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',

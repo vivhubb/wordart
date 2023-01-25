@@ -1,7 +1,9 @@
+import os
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from .models import Post, Comment
 from .forms import CommentForm, WordArtForm
@@ -64,6 +66,12 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            send_mail('Comment approval',
+                      'A comment is waiting for your approval.\
+\nPlease check admin dashboard.',
+                      os.environ.get("ADMIN_EMAIL"),
+                      [os.environ.get("ADMIN_EMAIL")]
+                      )
         else:
             comment_form = CommentForm()
 
@@ -102,6 +110,12 @@ def add_wordart(request):
     if form.is_valid():
         form.instance.author = User.objects.get(username=request.user.username)
         form.save()
+        send_mail('Post approval',
+                  'A post is waiting for your approval.\
+\nPlease check admin dashboard.',
+                  os.environ.get("ADMIN_EMAIL"),
+                  [os.environ.get("ADMIN_EMAIL")]
+                  )
 
         messages.success(
             request, 'Your submission was successful and is awaiting approval')
@@ -122,6 +136,12 @@ def edit_wordart(request, slug):
         form.save(commit=False)
         post.approved = False
         form.save()
+        send_mail('Edited post approval',
+                  'An edited post is waiting for your approval.\
+\nPlease check admin dashboard.',
+                  os.environ.get("ADMIN_EMAIL"),
+                  [os.environ.get("ADMIN_EMAIL")]
+                  )
 
         messages.success(
             request,
@@ -163,6 +183,12 @@ def edit_comment(request, slug, pk):
             form.save(commit=False)
             comment.approved = False
             form.save()
+            send_mail('Edited comment approval',
+                      'An edited comment is waiting for your approval.\
+\nPlease check admin dashboard.',
+                      os.environ.get("ADMIN_EMAIL"),
+                      [os.environ.get("ADMIN_EMAIL")]
+                      )
 
             messages.success(
                 request,
