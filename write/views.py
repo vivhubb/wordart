@@ -145,3 +145,34 @@ def delete_wordart(request, slug):
         return HttpResponseRedirect(reverse('wordart'))
 
     return render(request, "post_delete.html", context)
+
+
+# Edit comment
+def edit_comment(request, slug, pk):
+    context = {}
+    queryset_comment = Comment.objects.filter(name=request.user.username)
+    comment = get_object_or_404(queryset_comment, pk=pk)
+    queryset_post = Post.objects.filter(author=request.user)
+    post = get_object_or_404(queryset_post, slug=slug)
+
+    form = CommentForm(request.POST or None, instance=comment)
+
+    if request.method == "POST":
+        if form.is_valid():
+            form.save(commit=False)
+            comment.approved = False
+            form.save()
+
+            messages.success(
+                request,
+                """Your comment update request was received
+                 and it is now awaiting approval."""
+            )
+
+            return HttpResponseRedirect(reverse('wordart'))
+
+    context = {
+        "form": form,
+        "post": post
+    }
+    return render(request, "comment_update.html", context)

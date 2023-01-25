@@ -35,7 +35,6 @@
 {% if request.user == post.author %}
 
     <span><a href="{% url 'post_update' post.slug %}">EDIT</a></span>
-
     <span><a href="{% url 'post_delete' post.slug %}">DELETE</a></span>
 
 {% endif %}
@@ -48,7 +47,12 @@
 <strong>{{ comment.name }}</strong> wrote:
 {{ comment.comment | linebreaks }}
 {{ comment.created_date }}
+
+    {% if request.user.username == comment.name %}
+        <span><a href="{% url 'comment_update' slug=post.slug pk=comment.pk %}">EDIT</a></span>
+    {% endif %}
 {% endfor %}
+
 
 <div class="col-md-4 card mb-4  mt-3 ">
     <div class="card-body">

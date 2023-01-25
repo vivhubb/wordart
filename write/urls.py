@@ -25,4 +25,9 @@ urlpatterns = [
     path('<slug:slug>/post_update', views.edit_wordart, name='post_update'),
     path('<slug:slug>/post_delete', views.delete_wordart, name='post_delete'),
     path('like/<slug:slug>', views.LikeUnlike.as_view(), name='like_unlike'),
+    path(
+        '<slug:slug>-<int:pk>/comment_update',
+        views.edit_comment,
+        name='comment_update'
+        ),
 ]
