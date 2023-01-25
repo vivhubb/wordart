@@ -15,6 +15,7 @@ Including another URLconf
 """
 
 from . import views
+from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
@@ -36,4 +37,5 @@ urlpatterns = [
         name='comment_delet'
         ),
     path("accounts/", include("allauth.urls")),
+    # path('admin/', admin.site.urls, name='admin_site'),
 ]
