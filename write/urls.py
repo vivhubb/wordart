@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from . import views
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('', views.About.as_view(template_name='about.html'), name='about'),
@@ -33,6 +33,7 @@ urlpatterns = [
     path(
         '<int:pk>/comment_delete',
         views.delete_comment,
-        name='comment_delete'
+        name='comment_delet'
         ),
+    path("accounts/", include("allauth.urls")),
 ]
