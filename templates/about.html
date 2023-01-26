@@ -3,17 +3,54 @@
 {% block content %}
 
 <!-- HERO -->
-<div class="d-flex">
+<div class="container-fluid">
     <div class="row">
         <div class="col-3" style="margin: auto;">
             <h2>Quotes and Poems for the Soul</h2>
+            <br>
+            <br>
             <p>Join our healing community and share a quote or poem that you love or wrote!</p>
+            <br>
+            <br>
+            {% if not user.is_authenticated %}
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary">Join our Community</a>
+            {% endif %}
         </div>
-        <div class="col-9">
+        <div class="col-9 p-0">
             <img src="/static/images/hero.jpg" alt="Typewriter" class="img-fluid">
         </div>
     </div>
 </div>
+
+<br><br>
+<hr><hr>
+
+<!-- STEPS -->
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div>
+                <i class="fa-sharp fa-solid fa-user-plus fa-2xl"></i>
+            </div>
+            <div>
+                <h4>Step 1: Register for an account</h4>
+                <p>Sign up for an account and join our healing community.</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div>
+                <i class="fa-sharp fa-solid fa-share-nodes fa-2xl"></i>
+            </div>
+            <div>
+                <h4>Step 2: Share a quote or poem</h4>
+                <p>Share a quote or poem that you love or wrote. See what others like, show your appreciation and share your opinion in the comments section.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr><hr>
+<br><br>
 
 
 {% endblock %}
