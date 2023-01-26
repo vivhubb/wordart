@@ -9,7 +9,11 @@
             <h2>Quotes and Poems for the Soul</h2>
             <br>
             <br>
-            <p>Join our healing community and share a quote or poem that you love or wrote!</p>
+            {% if user.is_authenticated %}
+                <p>A place to share a quote or poem that you love or wrote!</p>
+            {% else %}
+                <p>Join our healing community and share a quote or poem that you love or wrote!</p>
+            {% endif %}
             <br>
             <br>
             {% if not user.is_authenticated %}
@@ -22,11 +26,8 @@
     </div>
 </div>
 
-<br><br>
-<hr><hr>
-<br>
-
 {% if not user.is_authenticated %}
+<br><br>
 <!-- STEPS -->
 <div class="container">
     <div class="row justify-content-around">
@@ -54,7 +55,24 @@
 </div>
 {% endif %}
 
-<hr><hr>
+<br><br>
+
+<!-- READ -->
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            {% if user.is_authenticated %}
+                <br>
+                <h5><strong>Have a read and unwind..</strong></h5>
+                <p><em>(click on the below picture to go to the WordArt page)</em></p>
+            {% else %}
+                <h5><strong>Want to take a look? Have a read!</strong></h5>
+            {% endif %}
+            <a href="{% url 'wordart' %}"><img src="/static/images/read.jpg" class="img-fluid w-50" alt="Read"></a>
+        </div>
+    </div>
+</div>
+
 <br><br>
 
 
