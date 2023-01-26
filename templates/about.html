@@ -24,30 +24,35 @@
 
 <br><br>
 <hr><hr>
+<br>
 
+{% if not user.is_authenticated %}
 <!-- STEPS -->
 <div class="container">
-    <div class="row">
-        <div class="col-6">
+    <div class="row justify-content-around">
+        <div class="col-5 border border-secondary rounded p-5">
             <div>
-                <i class="fa-sharp fa-solid fa-user-plus fa-2xl"></i>
+                <a href="{% url 'account_signup' %}" class="text-dark"><i class="fa-sharp fa-solid fa-user-plus fa-2xl p-1"></i></a>
             </div>
+            <br>
             <div>
-                <h4>Step 1: Register for an account</h4>
+                <h4 class="m-2">Step 1: Register for an account</h4>
                 <p>Sign up for an account and join our healing community.</p>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-5 border border-secondary rounded p-5">
             <div>
-                <i class="fa-sharp fa-solid fa-share-nodes fa-2xl"></i>
+                <i class="fa-solid fa-pen-to-square fa-2xl p-1"></i>
             </div>
+            <br>
             <div>
-                <h4>Step 2: Share a quote or poem</h4>
+                <h4 class="p-1">Step 2: Share a quote or poem</h4>
                 <p>Share a quote or poem that you love or wrote. See what others like, show your appreciation and share your opinion in the comments section.</p>
             </div>
         </div>
     </div>
 </div>
+{% endif %}
 
 <hr><hr>
 <br><br>
