@@ -26,35 +26,72 @@
 </head>
 
 <body>
-    <!-- TITLE -->
-    <div class="text-left m-2">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid inline-block">
+          <div class="navbar-header">
+            <!-- TITLE -->
+            <a class="navbar-brand" href="{% url 'about' %}"><h1 class="btn btn-dark btn-lg">WordArt</h1></a>
+          </div>
+          <ul class="nav">
+            <!-- PAGES -->
+            <li class="active pr-3 text-center"><a href="{% url 'about' %}" class="btn btn-secondary">About</a></li>
+            <li class="dropdown pr-3"><a class="dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="{% url 'wordart' %}"><span class="caret">WordArt</span></a>
+                <ul class="dropdown-menu border-0">
+                  <li class="p-1"><a href="#" class="btn btn-secondary">Quotes</a></li>
+                  <li class="p-1"><a href="#" class="btn btn-secondary">Poems</a></li>
+                </ul>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="pr-3"><a href="{% url 'add_wordart' %}" class="btn btn-secondary">Create New Post</a></li>
+            {% endif %}
+            {% if user.is_superuser %}
+                <li class="pr-3"><a href="{% url 'admin:index' %}" class="btn btn-secondary">Admin dashboard</a></li>
+            {% endif %}
+          </ul>
+          <ul class="nav navbar-right">
+            {% if user.is_authenticated %}
+                <li class="pr-3"><a href="{% url 'account_logout' %}" class="btn btn-secondary"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            {% else %}
+                <li class="pr-3"><a href="{% url 'account_signup' %}"class="btn btn-secondary"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li class="pr-3"><a href="{% url 'account_login' %}" class="btn btn-secondary"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+
+    
+    <!-- <div class="text-left w-25 m-0 pt-2 pl-2 inline-block">
         <a href="{% url 'about' %}">
             <h1 class="btn btn-secondary btn-lg">WordArt</h1>
         </a>
     </div>
 
-    <!-- NAVBAR -->
-    <a href="{% url 'about' %}">About</a>
-    <a href="/wordart">WordArt</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark float-right inline-block w-75 m-0 pt-2 pr-2">
+        <div class="container-fluid">
+            <a href="{% url 'about' %}">About</a>
+            <a href="/wordart">WordArt</a>
 
-    {% if user.is_authenticated %}
-    <a href="{% url 'account_logout' %}">Logout</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'account_logout' %}">Logout</a>
 
-        {% if user.is_superuser %}
-        <a href="{% url 'admin:index' %}">Admin dashboard</a>
+            {% if user.is_superuser %}
+            <a href="{% url 'admin:index' %}">Admin dashboard</a>
+            {% endif %}
+        </div>
+
+        <div class="container w-25 text-right">
+            <a href="/add">Create New Post</a>
+        </div>
+
+        {% else %}
+
+        <a href="{% url 'account_signup' %}">Register</a> |
+        <a href="{% url 'account_login' %}">Login</a>
+
         {% endif %}
-
-    <hr>
-    <!-- CREATE NEW POST -->
-    <a href="/add">Create New Post</a>
-    <hr>
-
-    {% else %}
-
-    <a href="{% url 'account_signup' %}">Register</a> |
-    <a href="{% url 'account_login' %}">Login</a>
-
-    {% endif %}
+    </nav> -->
 
     <!-- ALERT MESSAGES -->
     <div class="container">
