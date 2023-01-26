@@ -21,6 +21,8 @@ from django.urls import path, include
 urlpatterns = [
     path('', views.About.as_view(template_name='about.html'), name='about'),
     path('wordart/', views.WordartList.as_view(), name='wordart'),
+    path('quotes/', views.WordartList.as_view(), name='quotes'),
+    path('poems/', views.WordartList.as_view(), name='poems'),
     path('add/', views.add_wordart, name='add_wordart'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('<slug:slug>/post_update', views.edit_wordart, name='post_update'),
