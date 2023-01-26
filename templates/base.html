@@ -38,12 +38,6 @@
             <!-- PAGES -->
             <li class="active p-1 text-center"><a href="{% url 'about' %}" class="btn btn-secondary">About</a></li>
             <li class="active p-1 text-center"><a href="{% url 'wordart' %}" class="btn btn-secondary">WordArt</a></li>
-            <!-- <li class="dropdown p-1"><a class="dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="{% url 'wordart' %}"><span class="caret">WordArt</span></a>
-                <ul class="dropdown-menu border-0">
-                  <li class="p-1"><a href="{% url 'quotes' %}" class="btn btn-secondary">Quotes</a></li>
-                  <li class="p-1"><a href="{% url 'poems' %}" class="btn btn-secondary">Poems</a></li>
-                </ul>
-            </li> -->
             <!-- CREATE POST -->
             {% if user.is_authenticated %}
                 <li class="p-1"><a href="{% url 'add_wordart' %}" class="btn btn-secondary">Create New Post</a></li>

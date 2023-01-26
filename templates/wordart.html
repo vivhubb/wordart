@@ -2,23 +2,49 @@
 
 {% block content %}
 
-<h2>WordArt</h2>
+<div class="m-4 p-4">
+    <h2><strong>WordArt</strong></h2>
+</div>
 
-<!-- FEED -->
-{% for word in wordart_list %}
-    <h6> Category: {{ word.get_category_display }} </h6>
-    <a href="{% url 'post_detail' word.slug %}">
-        <h3> Title: {{ word.title }} </h3>
-    </a>
-    <hr>
-    <p> {{ word.content | safe}} </p>
-    <p> {{ word.get_ownership_display }} | Original author: {{ word.creator }} </p>
-    <hr>
-    <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
-    <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
-    <p> Created on: {{ word.created_date }} </p>
-    <hr>
-    <hr>
-{% endfor %}
+<!-- WORDART LIST -->
+<div class="container">
+    <div class="row justify-content-center">    
+        <div class="col-lg-6 text-center">
+            {% for word in wordart_list %}
+                {% if word.category == 'Q' %}
+                    <div class="text center border border-info rounded-circle m-1 p-5">
+                        <br>
+                        <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                            <u><strong> {{ word.title }} </strong></u>
+                        </a>|
+                        <small> Category: {{ word.get_category_display }} </small>
+                        <br>
+                        <p> {{ word.content | safe}} </p>
+                        <p>- {{ word.creator }}</p>
+                        <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
+                        <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
+                        <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
+                        <br>
+                    </div>
+                {% else %}
+                    <div class="text-center border border-warning rounded-circle m-1 p-5">
+                        <br>
+                        <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                            <u><strong> {{ word.title }} </strong></u>
+                        </a>|
+                        <small> Category: {{ word.get_category_display }} </small>
+                        <br>
+                        <p> {{ word.content | safe}} </p>
+                        <p>- {{ word.creator }}</p>
+                        <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
+                        <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
+                        <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
+                        <br>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
