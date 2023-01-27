@@ -27,77 +27,56 @@
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-dark fixed-top flex-shrink-0 bg-dark">
-        <div class="container-fluid inline-block">
-            <div class="navbar-header">
-                <!-- TITLE -->
-                <a class="navbar-brand" href="{% url 'about' %}">
-                    <h1 class="btn btn-dark btn-lg">WordArt</h1>
-                </a>
-            </div>
-            <ul class="nav">
+    <!-- NAVBAR FIXED AND COLLAPSE -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <!-- BRAND -->
+        <a class="navbar-brand" href="{% url 'about' %}">
+            <h1 class="btn btn-dark btn-lg">WordArt</h1>
+        </a>
+        <!-- TOGGLER BUTTON -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- NAVBAR LINKS -->
+        <div class="collapse navbar-collapse navbar navbar-right" id="navbar-collapse">
+            <ul class="navbar-nav">
                 <!-- PAGES -->
-                <li class="active p-1 text-center"><a href="{% url 'about' %}" class="btn btn-secondary">About</a></li>
-                <li class="active p-1 text-center"><a href="{% url 'wordart' %}" class="btn btn-secondary">WordArt</a>
+                <li class="nav-item p-1">
+                    <a href="{% url 'about' %}" class="nav-link">About</a>
+                </li>
+                <li class="nav-item p-1">
+                    <a href="{% url 'wordart' %}" class="nav-link">WordArt</a>
                 </li>
                 <!-- CREATE POST -->
                 {% if user.is_authenticated %}
-                <li class="p-1"><a href="{% url 'add_wordart' %}" class="btn btn-secondary">Create New Post</a></li>
+                <li class="nav-item p-1">
+                    <a href="{% url 'add_wordart' %}" class="nav-link">Create New Post</a>
+                </li>
                 {% endif %}
                 <!-- ADMIN DASHBOARD -->
                 {% if user.is_superuser %}
-                <li class="p-1"><a href="{% url 'admin:index' %}" class="btn btn-secondary">Admin dashboard</a></li>
+                <li class="nav-item p-1">
+                    <a href="{% url 'admin:index' %}" class="nav-link">Admin dashboard</a>
+                </li>
                 {% endif %}
             </ul>
-            <ul class="nav navbar-right">
+            <ul class="navbar-nav navbar-right">
                 <!-- SIGN UP & LOGIN & LOGOUT -->
                 {% if user.is_authenticated %}
-                <li class="p-1"><a href="{% url 'account_logout' %}" class="btn btn-secondary"><span
-                            class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li class="nav-item p-1">
+                    <a href="{% url 'account_logout' %}" class="nav-link">Logout</a>
+                </li>
                 {% else %}
-                <li class="p-1"><a href="{% url 'account_signup' %}" class="btn btn-secondary"><span
-                            class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li class="p-1"><a href="{% url 'account_login' %}" class="btn btn-secondary"><span
-                            class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li class="nav-item p-1">
+                    <a href="{% url 'account_signup' %}" class="nav-link">Sign Up</a>
+                </li>
+                <li class="nav-item p-1">
+                    <a href="{% url 'account_login' %}" class="nav-link">Login</a>
+                </li>
                 {% endif %}
             </ul>
         </div>
     </nav>
-
-    <!-- FIXED NAVBAR AND COLLAPSE
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="{% url 'about' %}">
-            <h1 class="btn btn-dark btn-lg">WordArt</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"></button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{% url 'wordart' %}">WordArt</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_wordart' %}">Create New Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}">Admin dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                </li>
-            </ul>
-        </div>
-    </nav> -->
 
     <!-- ALERT MESSAGES -->
     <div class="container">
