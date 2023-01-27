@@ -7,26 +7,24 @@
 </div>
 
 <!-- WORDART LIST -->
-<div class="container">
-    <div class="row  justify-content-center">
-            {% for word in wordart_list %}
-                <div class="col-8 text-center m-1 p-5">
-                    <br>
-                        <a href="{% url 'post_detail' word.slug %}" class="text-dark">
-                            <u><strong> {{ word.title }} </strong></u>
-                        </a>|
-                        <small> Category: {{ word.get_category_display }} </small>
-                        <br>
-                        <p> {{ word.content | safe}} </p>
-                        <p>- {{ word.creator }} </p>
-                        <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
-                        <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
-                        <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
-                    <br>
-                </div>
-            {% endfor %}
+{% for word in wordart_list %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 text-center m-1 p-5">
+            <br>
+            <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                <u><strong> {{ word.title }} </strong></u>
+            </a>|
+            <small> Category: {{ word.get_category_display }} </small>
+            <br>
+            <p> {{ word.content | safe}} </p>
+            <p>- {{ word.creator }} </p>
+            <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
+            <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
+            <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
         </div>
     </div>
 </div>
+{% endfor %}
 
 {% endblock %}
