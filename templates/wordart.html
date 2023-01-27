@@ -8,10 +8,9 @@
 
 <!-- WORDART LIST -->
 <div class="container">
-    <div class="row justify-content-center">    
-        <div class="col-lg-8 text-center">
+    <div class="row  justify-content-center">
             {% for word in wordart_list %}
-                {% if word.category == 'Q' %}
+                <div class="col-8 text-center">
                     <div class="text center m-1 p-5">
                         <br>
                         <a href="{% url 'post_detail' word.slug %}" class="text-dark">
@@ -26,22 +25,7 @@
                         <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
                         <br>
                     </div>
-                {% else %}
-                    <div class="text-center m-1 p-5">
-                        <br>
-                        <a href="{% url 'post_detail' word.slug %}" class="text-dark">
-                            <u><strong> {{ word.title }} </strong></u>
-                        </a>|
-                        <small> Category: {{ word.get_category_display }} </small>
-                        <br>
-                        <p> {{ word.content | safe}} </p>
-                        <p>- {{ word.creator }}</p>
-                        <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
-                        <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
-                        <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
-                        <br>
-                    </div>
-                {% endif %}
+                </div>
             {% endfor %}
         </div>
     </div>
