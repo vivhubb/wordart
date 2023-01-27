@@ -4,8 +4,8 @@
 
 <!-- HERO -->
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-3" style="margin: auto;">
+    <div class="row justify-content-center">
+        <div class="col-8 col-md-3" style="margin: auto;">
             <h2>Quotes and Poems for the Soul</h2>
             <br>
             <br>
@@ -20,7 +20,7 @@
             <a href="{% url 'account_signup' %}" class="btn btn-secondary">Join our Community</a>
             {% endif %}
         </div>
-        <div class="col-9 p-0">
+        <div class="col-12 col-md-9 p-0">
             <img src="/static/images/hero.jpg" alt="Typewriter" class="img-fluid">
         </div>
     </div>
@@ -64,10 +64,10 @@
             {% if user.is_authenticated %}
                 <br>
                 <h5><strong>Have a read and unwind..</strong></h5>
-                <p><em>(click on the below picture to go to the WordArt page)</em></p>
+                <p><em>(you can click on the below picture to go to the WordArt page)</em></p>
             {% else %}
                 <h5><strong>Want to take a look? Have a read!</strong></h5>
-                <p><em>(click on the below picture to go to the WordArt page)</em></p>
+                <p><em>(you can click on the below picture to go to the WordArt page)</em></p>
             {% endif %}
             <a href="{% url 'wordart' %}"><img src="/static/images/read.jpg" class="img-fluid w-50" alt="Read"></a>
         </div>
