@@ -4,18 +4,24 @@
 
 {% load crispy_forms_tags %}
 
-<h2>Edit Wordart</h2>
-
 {% if user.is_authenticated %}
-
-    <p>Editing as: {{ user.username }}</p>
-
-    <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
-        {{ form | crispy }}
-        {% csrf_token %}
-        <button type="submit" class="btn btn-secondary btn-signup">Edit Post</button>
-    </form>
-
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Edit Wordart</h2>
+                <p>Editing as: {{ user.username }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form method="POST" enctype="multipart/form-data">
+                    {{ form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-secondary btn-signup mb-2">Edit Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endif %}
 
 {% endblock %}
