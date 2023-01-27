@@ -17,47 +17,87 @@
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
-    
-        <title>WordArt | Quotes and Poems for the Soul</title>
+
+    <title>WordArt | Quotes and Poems for the Soul</title>
 
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-dark fixed-top flex-shrink-0 bg-dark">
         <div class="container-fluid inline-block">
-          <div class="navbar-header">
-            <!-- TITLE -->
-            <a class="navbar-brand" href="{% url 'about' %}"><h1 class="btn btn-dark btn-lg">WordArt</h1></a>
-          </div>
-          <ul class="nav">
-            <!-- PAGES -->
-            <li class="active p-1 text-center"><a href="{% url 'about' %}" class="btn btn-secondary">About</a></li>
-            <li class="active p-1 text-center"><a href="{% url 'wordart' %}" class="btn btn-secondary">WordArt</a></li>
-            <!-- CREATE POST -->
-            {% if user.is_authenticated %}
+            <div class="navbar-header">
+                <!-- TITLE -->
+                <a class="navbar-brand" href="{% url 'about' %}">
+                    <h1 class="btn btn-dark btn-lg">WordArt</h1>
+                </a>
+            </div>
+            <ul class="nav">
+                <!-- PAGES -->
+                <li class="active p-1 text-center"><a href="{% url 'about' %}" class="btn btn-secondary">About</a></li>
+                <li class="active p-1 text-center"><a href="{% url 'wordart' %}" class="btn btn-secondary">WordArt</a>
+                </li>
+                <!-- CREATE POST -->
+                {% if user.is_authenticated %}
                 <li class="p-1"><a href="{% url 'add_wordart' %}" class="btn btn-secondary">Create New Post</a></li>
-            {% endif %}
-            <!-- ADMIN DASHBOARD -->
-            {% if user.is_superuser %}
+                {% endif %}
+                <!-- ADMIN DASHBOARD -->
+                {% if user.is_superuser %}
                 <li class="p-1"><a href="{% url 'admin:index' %}" class="btn btn-secondary">Admin dashboard</a></li>
-            {% endif %}
-          </ul>
-          <ul class="nav navbar-right">
-            <!-- SIGN UP & LOGIN & LOGOUT -->
-            {% if user.is_authenticated %}
-                <li class="p-1"><a href="{% url 'account_logout' %}" class="btn btn-secondary"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-            {% else %}
-                <li class="p-1"><a href="{% url 'account_signup' %}"class="btn btn-secondary"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li class="p-1"><a href="{% url 'account_login' %}" class="btn btn-secondary"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            {% endif %}
-          </ul>
+                {% endif %}
+            </ul>
+            <ul class="nav navbar-right">
+                <!-- SIGN UP & LOGIN & LOGOUT -->
+                {% if user.is_authenticated %}
+                <li class="p-1"><a href="{% url 'account_logout' %}" class="btn btn-secondary"><span
+                            class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                {% else %}
+                <li class="p-1"><a href="{% url 'account_signup' %}" class="btn btn-secondary"><span
+                            class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li class="p-1"><a href="{% url 'account_login' %}" class="btn btn-secondary"><span
+                            class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                {% endif %}
+            </ul>
         </div>
-      </nav>
+    </nav>
+
+    <!-- FIXED NAVBAR AND COLLAPSE
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{% url 'about' %}">
+            <h1 class="btn btn-dark btn-lg">WordArt</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'wordart' %}">WordArt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_wordart' %}">Create New Post</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:index' %}">Admin dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
 
     <!-- ALERT MESSAGES -->
     <div class="container">
@@ -77,9 +117,9 @@
 
     {% endblock content %}
 
-    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <footer class="fixed-bottom flex-shrink-0 py-4 bg-dark text-white-50">
         <div class="container text-center">
-          <small>Copyright &copy; WordArt</small>
+            <small>Copyright &copy; WordArt</small>
         </div>
     </footer>
 
