@@ -4,30 +4,31 @@
 
 {% load crispy_forms_tags %}
 
-    <h6> Category: {{ post.get_category_display }} </h6>
-    <h3> Title: {{ post.title }} </h3>
-    <p> {{ post.created_date }} </p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h6> Category: {{ post.get_category_display }} </h6>
+            <h3> Title: {{ post.title }} </h3>
+        <p> {{ post.created_date }} </p>
 
-    <p> {{ post.get_ownership_display }} | Original author: {{ post.creator }} </p>
-    <p> {{ post.content | safe}} </p>
-
-<hr>
-
-<h5><strong>Edit Comment</strong></h5>
-
-<div class="col-md-4 card mb-4  mt-3 ">
-    <div class="card-body">
-
-        {% if user.is_authenticated %}
-            <h4>Leave a comment:</h4>
+        <p> {{ post.get_ownership_display }} | Original author: {{ post.creator }} </p>
+        <p> {{ post.content | safe}} </p>
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="row justify-content-center">
+        <div class="col text-light rounded bg-dark p-2">
+            <h4>Edit comment:</h4>
             <p>Logged in as: {{ user.username }}</p>
-            <form method="post" style="margin-top: 1.3em;">
+            <form method="post" style="margin-top: 1.3em; text-align: left;">
                 {{ form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-secondary btn btn-signup">Edit Comment</button>
             </form>
-        {% endif %}
+        </div>
     </div>
+    {% endif %}
+    <br>
 </div>
 
 <!-- JS FOR ALERT MESSAGES -->
