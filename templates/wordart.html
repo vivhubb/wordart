@@ -9,10 +9,10 @@
 <!-- WORDART LIST -->
 <div class="container">
     <div class="row justify-content-center">    
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-8 text-center">
             {% for word in wordart_list %}
                 {% if word.category == 'Q' %}
-                    <div class="text center border border-info rounded-circle m-1 p-5">
+                    <div class="text center m-1 p-5">
                         <br>
                         <a href="{% url 'post_detail' word.slug %}" class="text-dark">
                             <u><strong> {{ word.title }} </strong></u>
@@ -27,7 +27,7 @@
                         <br>
                     </div>
                 {% else %}
-                    <div class="text-center border border-warning rounded-circle m-1 p-5">
+                    <div class="text-center m-1 p-5">
                         <br>
                         <a href="{% url 'post_detail' word.slug %}" class="text-dark">
                             <u><strong> {{ word.title }} </strong></u>
