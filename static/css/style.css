@@ -9,3 +9,9 @@ body {
 #id_content_iframe {
     width: 70vw;
 }
+
+/* style horizontal line break */
+hr {
+    border-top: 2px dotted black;
+    width: 50%;
+  }
