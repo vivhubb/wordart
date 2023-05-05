@@ -1,1 +1,1 @@
-web:gunicorn wordart.wsgi
+web: gunicorn wordart.wsgi
