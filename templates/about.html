@@ -21,7 +21,8 @@
             {% endif %}
         </div>
         <div class="col-12 col-md-9 p-0">
-            <img src="/static/images/hero.jpg" alt="Typewriter" class="img-fluid">
+            {% load static %}
+            <img src="{% static 'images/hero.jpg' %}" alt="Typewriter" class="img-fluid">
         </div>
     </div>
 </div>
@@ -69,7 +70,8 @@
                 <h5><strong>Want to take a look? Have a read!</strong></h5>
                 <p><em>(you can click on the below picture to go to the WordArt page)</em></p>
             {% endif %}
-            <a href="{% url 'wordart' %}"><img src="/static/images/read.jpg" class="img-fluid w-50" alt="Read"></a>
+            {% load static %}
+            <a href="{% url 'wordart' %}"><img src="{% static 'images/read.jpg' %}" class="img-fluid w-50" alt="Read"></a>
         </div>
     </div>
 </div>
