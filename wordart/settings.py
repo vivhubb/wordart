@@ -47,7 +47,7 @@ ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')
 ADMINS = [('admin', ADMIN_EMAIL)]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['wordart.herokuapp.com', 'localhost']
 

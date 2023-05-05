@@ -1,0 +1,17 @@
+body {
+    font-family: 'Kalam', cursive;
+    background-color: #e4ddce;
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 70px;
+}
+
+#id_content_iframe {
+    width: 70vw;
+}
+
+/* style horizontal line break */
+hr {
+    border-top: 2px dotted black;
+    width: 50%;
+  }
