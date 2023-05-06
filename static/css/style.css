@@ -6,9 +6,7 @@ body {
     padding-bottom: 70px;
 }
 
-#id_content_iframe {
-    width: 70vw;
-}
+/* summernote */
 
 /* style horizontal line break */
 hr {
