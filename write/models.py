@@ -30,10 +30,10 @@ class Post(models.Model):
         ordering = ['-created_date']
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
-    def number_of_likes(self):
-        return self.likes.count()
+    def number_of_comments(self):
+        return self.comments.filter(approved=True).count()
 
 
 class Comment(models.Model):

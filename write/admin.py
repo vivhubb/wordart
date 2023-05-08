@@ -11,7 +11,13 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['category', 'title', 'content', 'approved']
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content')
-    actions = ['approve_posts']
+    actions = ['approve_posts', 'save_model']
+
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+
+        obj.slug = form.cleaned_data.get('slug') + '-' + str(obj.id)
+        super().save_model(request, obj, form, change)
 
     def approve_posts(self, request, queryset):
         queryset.update(approved=True)

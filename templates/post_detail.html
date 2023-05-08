@@ -28,8 +28,8 @@
     {% endif %}
 </strong>
 
-<span>{{ post.number_of_likes }}</span> &nbsp
-<span><i class="fa-regular fa-comments"></i> {{ post.comments.count }}</span>
+<span>{{ post.likes.count }}</span> &nbsp
+<span><i class="fa-regular fa-comments"></i> {{ post.number_of_comments }}</span>
 
 <br>
 {% if request.user == post.author %}

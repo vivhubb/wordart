@@ -20,8 +20,8 @@
             <br>
             <p> {{ word.content | safe}} </p>
             <p>- {{ word.creator }} </p>
-            <i class="fa-solid fa-heart"></i> {{ word.number_of_likes }} &nbsp
-            <i class="fa-solid fa-comments"></i> {{ word.comments.count }}
+            <i class="fa-solid fa-heart"></i> {{ word.likes.count }} &nbsp
+            <i class="fa-solid fa-comments"></i> {{ word.number_of_comments }}
             <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
         </div>
     </div>
