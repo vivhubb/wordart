@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ModelForm
-from django.template.defaultfilters import slugify
 
 
 class Post(models.Model):
@@ -46,6 +45,7 @@ class Comment(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
+    author_id = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['-created_date']

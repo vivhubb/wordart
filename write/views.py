@@ -7,6 +7,7 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from .models import Post, Comment
 from .forms import CommentForm, WordArtForm
+from django.utils.text import slugify
 
 
 # About Page
@@ -109,6 +110,8 @@ def add_wordart(request):
     form = WordArtForm(request.POST or None)
     if form.is_valid():
         form.instance.author = User.objects.get(username=request.user.username)
+        form.save()
+        form.instance.slug = slugify(form.instance.title) + '-' + str(form.instance.id)
         form.save()
         send_mail('Post approval',
                   'A post is waiting for your approval.\
