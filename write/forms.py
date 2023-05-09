@@ -18,7 +18,7 @@ class WordArtForm(forms.ModelForm):
         widgets = {
             'content': SummernoteWidget(
                 attrs={
-                    'summernote': {'width': 'auto'}
-                    }
-                )
-            }
+                    'summernote': {'width': '100%'}
+                }
+            )
+        }
