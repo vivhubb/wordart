@@ -6,22 +6,22 @@
 
 <h6> Category: {{ post.get_category_display }} </h6>
 <h3> Title: {{ post.title }} </h3>
-<p> {{ post.created_date }} </p>
 
 <p> {{ post.get_ownership_display }} | Original author: {{ post.creator }} </p>
 <p> {{ post.content | safe}} </p>
+<p> {{ post.created_date }} </p>
 
 <strong>
     {% if user.is_authenticated %}
     <form class="d-inline" action="{% url 'like_unlike' post.slug %}" method="POST">
         {% csrf_token %}
-        {% if liked %}
         <button type="submit" value="{{ post.slug }}" class="btn-like border-0" style="background-color: #e4ddce;">
-            <i class="fa-solid fa-heart"></i></button>
-        {% else %}
-        <button type="submit" value="{{ post.slug }}" class="btn-like border-0" style="background-color: #e4ddce;">
-            <i class="fa-regular fa-heart"></i></button>
-        {% endif %}
+            {% if liked %}
+                <i class="fa-solid fa-heart"></i>
+            {% else %}
+                <i class="fa-regular fa-heart"></i>
+            {% endif %}
+        </button>
     </form>
     {% else %}
     <span class="text-secondary"><i class="fa-regular fa-heart"></i></span>
@@ -29,7 +29,7 @@
 </strong>
 
 <span>{{ post.likes.count }}</span> &nbsp
-<span><i class="fa-regular fa-comments"></i> {{ post.number_of_comments }}</span>
+<span><i class="fa-solid fa-comments"></i> {{ post.number_of_comments }}</span>
 
 <br>
 {% if request.user == post.author %}

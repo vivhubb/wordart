@@ -44,13 +44,12 @@ class PostDetail(View):
                 'post': post,
                 'comments': comments,
                 'commented': False,
-                'likes': liked,
+                'liked': liked,
                 'comment_form': CommentForm()
             },
         )
 
     # leave a comment
-
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
@@ -83,7 +82,7 @@ class PostDetail(View):
                 'post': post,
                 'comments': comments,
                 'commented': True,
-                'likes': liked,
+                'liked': liked,
                 'comment_form': CommentForm()
             },
         )

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
+from django.utils.text import slugify
 
 
 @admin.register(Post)
@@ -16,7 +17,7 @@ class PostAdmin(SummernoteModelAdmin):
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
 
-        obj.slug = form.cleaned_data.get('slug') + '-' + str(obj.id)
+        obj.slug = slugify(form.cleaned_data.get('title')) + '-' + str(obj.id)
         super().save_model(request, obj, form, change)
 
     def approve_posts(self, request, queryset):
