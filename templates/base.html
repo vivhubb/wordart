@@ -53,12 +53,16 @@
                 <li class="nav-item p-1">
                     <a href="{% url 'add_wordart' %}" class="nav-link">Create New Post</a>
                 </li>
-                {% endif %}
-                <!-- ADMIN DASHBOARD -->
-                {% if user.is_superuser %}
-                <li class="nav-item p-1">
-                    <a href="{% url 'admin:index' %}" class="nav-link">Admin dashboard</a>
-                </li>
+                    <!-- ADMIN DASHBOARD -->
+                    {% if user.is_superuser %}
+                    <li class="nav-item p-1">
+                        <a href="{% url 'admin:index' %}" class="nav-link">Admin dashboard</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item p-1">
+                        <a href="{% url 'user_dashboard' %}" class="nav-link">{{ user.username }} dashboard</a>
+                    </li>
+                    {% endif %}
                 {% endif %}
             </ul>
             <ul class="navbar-nav navbar-right">

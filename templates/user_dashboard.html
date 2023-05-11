@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for word in user_wordart_list %}
+    {% if user.id == word.author.id %}
+    <hr>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 text-center m-1 p-5">
+                <br>
+                <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                    <u><strong> {{ word.title }} </strong></u>
+                </a>|
+                <small> Category: {{ word.get_category_display }} </small>
+                <br>
+                <p> {{ word.content | safe}} </p>
+                <p>- {{ word.creator }} </p>
+                <i class="fa-solid fa-heart"></i> {{ word.likes.count }} &nbsp
+                <i class="fa-solid fa-comments"></i> {{ word.number_of_comments }}
+                <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

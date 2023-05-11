@@ -221,3 +221,12 @@ def delete_comment(request, pk):
         return HttpResponseRedirect(reverse('wordart'))
 
     return render(request, "comment_delete.html", context)
+
+
+# User dashboard
+class UserDashboard(generic.ListView):
+    model = Post
+    context_object_name = 'user_wordart_list'
+    template_name = 'user_dashboard.html'
+    queryset = Post.objects.all().filter(
+        approved=True).order_by('-created_date')

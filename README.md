@@ -1,8 +1,7 @@
 # **WordArt**
 As for my **4th** Portfolio Project with [Code Institute](https://codeinstitute.net/) my intention was to build a website that would be an asset for menthal health issues as nowadays i feel like this is quite a common issue. I believe reading in general is healthy and can help and improve a lot on our mindset and emotional state. [WordArt | Quotes and Poems for the Soul](https://wordart.herokuapp.com/) was built for this exact reason.
 
-![website_preview](static/images/mobile.png)
-![website_preview](static/images/tablet.png)
+![website_preview](static/images/all-devices-black.png)
 
 ## Table of contents
 

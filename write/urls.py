@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.About.as_view(template_name='about.html'), name='about'),
     path('wordart/', views.WordartList.as_view(), name='wordart'),
     path('add/', views.add_wordart, name='add_wordart'),
+    path("user/", views.UserDashboard.as_view(), name='user_dashboard'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('<slug:slug>/post_update', views.edit_wordart, name='post_update'),
     path('<slug:slug>/post_delete', views.delete_wordart, name='post_delete'),
