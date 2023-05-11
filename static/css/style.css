@@ -6,8 +6,12 @@ body {
     padding-bottom: 70px;
 }
 
+/* .card-body {
+    background-color: #b4aca6;
+} */
+
 /* style horizontal line break */
-hr {
+/* hr {
     border-top: 2px dotted black;
     width: 50%;
-  }
+  } */

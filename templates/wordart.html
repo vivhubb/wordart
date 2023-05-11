@@ -2,31 +2,70 @@
 
 {% block content %}
 
-<div class="m-4 p-4">
+<div class="m-4 p-2">
     <h2><strong>WordArt</strong></h2>
 </div>
 
 <!-- WORDART LIST -->
-{% for word in wordart_list %}
-<hr>
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4 text-center m-1 p-5">
-            <br>
-            <a href="{% url 'post_detail' word.slug %}" class="text-dark">
-                <u><strong> {{ word.title }} </strong></u>
-            </a>|
-            <small> Category: {{ word.get_category_display }} </small>
-            <br>
-            <p> {{ word.content | safe}} </p>
-            <p>- {{ word.creator }} </p>
-            <i class="fa-solid fa-heart"></i> {{ word.likes.count }} &nbsp
-            <i class="fa-solid fa-comments"></i> {{ word.number_of_comments }}
-            <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
+    <!-- <div class="container-fluid">
+        {% for word in wordart_list %}
+        {% if not forloop.counter|divisibleby:2 %}
+            <div class="row">
+        {% endif %}
+                <div class="col">
+                    <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                        <u><strong> {{ word.title }} </strong></u>
+                    </a>
+                    <small> Category: {{ word.get_category_display }} </small>
+                    <p> {{ word.content | safe}} </p>
+                    <p>- {{ word.creator }} </p>
+                    <i class="fa-solid fa-heart"></i> {{ word.likes.count }} &nbsp
+                    <i class="fa-solid fa-comments"></i> {{ word.number_of_comments }}
+                    <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
+                </div>
+        {% if forloop.counter|divisibleby:2 %}
+            </div>
+            <hr>
+        {% endif %}
+        {% endfor %}
+    </div> -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="row justify-content-center">
+                    {% for word in wordart_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body rounded">
+                                <div class="card-title">
+                                    <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                                        <u><strong> {{ word.title }} </strong></u>
+                                    </a>
+                                </div>
+                                <div class="card_subtitle">
+                                    <small> Category: {{ word.get_category_display }} </small>
+                                </div>
+                                <div class="card-text">
+                                    <p> {{ word.excerpt}} </p>
+                                </div>
+                                <div>
+                                    <p>- {{ word.creator }} </p>
+                                    <i class="fa-solid fa-heart"></i> {{ word.likes.count }} &nbsp
+                                    <i class="fa-solid fa-comments"></i> {{ word.number_of_comments }}
+                                    <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<hr>
-{% endfor %}
 
 {% endblock %}
