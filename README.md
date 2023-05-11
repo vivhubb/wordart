@@ -4,15 +4,18 @@ As for my **4th** Portfolio Project with [Code Institute](https://codeinstitute.
 ![website_preview](static/images/mobile.png)
 ![website_preview](static/images/tablet.png)
 
+## Table of contents
+
 <!-- TOC -->
 
 - [**WordArt**](#wordart)
+    - [Table of contents](#table-of-contents)
 - [**Project**](#project)
     - [**Objective**](#objective)
     - [**User Experience UX**](#user-experience-ux)
         - [**User Stories**](#user-stories)
-            - [User](#user)
-            - [Admin](#admin)
+            - [**User**](#user)
+            - [**Admin**](#admin)
         - [**Wireframes**](#wireframes)
         - [**Site Structure**](#site-structure)
         - [**Design Choices**](#design-choices)
@@ -48,6 +51,8 @@ As for my **4th** Portfolio Project with [Code Institute](https://codeinstitute.
 I love reading all kinds of things like books, short stories, poems, quotes. Reading can be a great way to relax and unwind. It can help reduce stress, anxiety, and depression by providing a mental escape from daily pressures.
 <br/>
 The objective of this app would be to provide a user-friendly platform for users to find, share, and discuss their favorite quotes and poems, while also allowing them to connect with other like-minded individuals.
+
+[Back to TOP](<#table-of-contents>)
 
 ## **User Experience UX**
 ### **User Stories**
@@ -85,8 +90,7 @@ The objective of this app would be to provide a user-friendly platform for users
 | As an Admin | i receive email notifications so that i can keep track of what is happening on the website | &check; |
 | As an Admin | i receive email notifications so that i can keep track of what is happening on the website | &check; |
 
-
-[Back to top](<#table-of-content>)
+[Back to TOP](<#table-of-contents>)
 
 ### **Wireframes**
 ### **Site Structure**
