@@ -57,6 +57,8 @@ ALLOWED_HOSTS = ['wordart.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
