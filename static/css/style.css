@@ -6,10 +6,15 @@ body {
     padding-bottom: 70px;
 }
 
-/* summernote */
-
 /* style horizontal line break */
 hr {
     border-top: 2px dotted black;
     width: 50%;
   }
+
+/* responsive text */
+/* @include media-breakpoint-down(sm) {
+    h4, p {
+        font-size: small;
+    }
+} */
