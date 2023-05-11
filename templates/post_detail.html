@@ -68,29 +68,22 @@
         </div>
     {% endfor %}
 
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col mb-4 mt-3">
             <div class="card-body">
-                {% if commented %}
-                    <div class="alert alert-success {{ message.tags }} alert-dismissible fade show" role="alert" id="com">
-                        We have received your comment and it is now awaiting approval.
+                {% if user.is_authenticated %}
+                    <div class="row justify-content-center">
+                        <div class="col text-light rounded bg-dark p-2">
+                            <h4>Leave a comment:</h4>
+                            <p>Logged in as: {{ user.username }}</p>
+                            <form method="post" style="margin-top: 1.3em; text-align: left;">
+                                {{ comment_form | crispy }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-secondary btn btn-signup">Comment</button>
+                            </form>
+                        </div>
                     </div>
-                {% else %}
-                    {% if user.is_authenticated %}
-                            <div class="row justify-content-center">
-                                <div class="col text-light rounded bg-dark p-2">
-                                    <h4>Leave a comment:</h4>
-                                    <p>Logged in as: {{ user.username }}</p>
-                                    <form method="post" style="margin-top: 1.3em; text-align: left;">
-                                        {{ comment_form | crispy }}
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-secondary btn btn-signup">Comment</button>
-                                    </form>
-                                </div>
-                            </div>
-                    {% endif %}
                 {% endif %}
             </div>
         </div>

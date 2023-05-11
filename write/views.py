@@ -53,7 +53,7 @@ class PostDetail(View):
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by('created_date')
+        comments = post.comments.all().order_by('created_date')
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -66,12 +66,6 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            send_mail('Comment approval',
-                      'A comment is waiting for your approval.\
-\nPlease check admin dashboard.',
-                      os.environ.get("ADMIN_EMAIL"),
-                      [os.environ.get("ADMIN_EMAIL")]
-                      )
         else:
             comment_form = CommentForm()
 
