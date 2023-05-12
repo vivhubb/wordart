@@ -92,6 +92,16 @@ The objective of this app would be to provide a user-friendly platform for users
 [Back to TOP](<#table-of-contents>)
 
 ### **Wireframes**
+
+The WIREFRAMES for WordArt were created with [Wireframe.cc](https://wireframe.cc/) to help visualize the project. They slightly differ from the website's final look due to developements and new ideas during creation.
+
+* Desktop <br>
+![Desktop](static/images/wireframe0.png)
+* Tablet <br>
+![Tablet](static/images/wireframe1.png)
+* Mobile <br>
+![Mobile](static/images/wireframe2.png)
+
 ### **Site Structure**
 ### **Design Choices**
 ### **Typography**
