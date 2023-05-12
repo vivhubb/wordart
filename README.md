@@ -18,8 +18,6 @@ As for my **4th** Portfolio Project with [Code Institute](https://codeinstitute.
         - [**Wireframes**](#wireframes)
         - [**Site Structure**](#site-structure)
         - [**Design Choices**](#design-choices)
-        - [**Typography**](#typography)
-        - [**Colour Scheme**](#colour-scheme)
         - [**Project Management**](#project-management)
     - [**Existing Features**](#existing-features)
         - [**Navigation**](#navigation)
@@ -114,8 +112,22 @@ The WordArt website has 2 main pages when accessed by a user who is not logged i
     - The admin dashboard is only accessible by the superuser. The purpose is to manage and maintain the website content.
 
 ### **Design Choices**
-### **Typography**
-### **Colour Scheme**
+* **Typography**
+
+Kalam's letterforms feature a very steep slant from the top right to the bottom left. They are similar to letters used in everyday handwriting, and look like they might have been written with either a thin felt-tip pen, or a ball-point pen. In the Devanagari letterforms, the knotted-terminals are open, but some other counter forms are closed.
+
+Like many informal handwriting-style fonts, it appears rather fresh and new when seen on screen or printed on the page.
+
+I have chosen the Kalam font for the website (falls back on cursive). Choice was made due to the fonts hadnwriting effect which is complementing the website's aesthetics..
+
+* **Colour Scheme**
+
+The colour scheme choice was somewhat based on the main page's hero image keeping a common attribute throughout the whole website.
+
+The color scheme visualisation was made using [Coolors](https://coolors.co/).
+
+![color scheme](static/images/color_scheme.png)
+
 ### **Project Management**
 ## **Existing Features**
 ### **Navigation**
