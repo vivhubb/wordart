@@ -103,6 +103,16 @@ The WIREFRAMES for WordArt were created with [Wireframe.cc](https://wireframe.cc
 ![Mobile](static/images/wireframe2.png)
 
 ### **Site Structure**
+
+The WordArt website has 2 main pages when accessed by a user who is not logged in and 4 pages when the user is logged in.
+
+* User interface:
+    - About page - this is the page that welcomes the user when accessing the website
+    - WordArt page - here users can find all Quotes and Poems posted on the website
+
+* Admin dashboard:
+    - The admin dashboard is only accessible by the superuser. The purpose is to manage and maintain the website content.
+
 ### **Design Choices**
 ### **Typography**
 ### **Colour Scheme**
