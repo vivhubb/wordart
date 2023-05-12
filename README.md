@@ -416,6 +416,11 @@ For the future i am planning to split the **quotes** and **poems** into two diff
 [JUMP to TOP](<#table-of-contents>)
 
 ### **Code Validation**
+
+The WordArt code has been tested with:
+
+
+
 ### **Lighthouse Testing**
 ## **Bugs**
 ## **Deployment**

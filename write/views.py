@@ -225,10 +225,11 @@ class UserDashboard(generic.ListView):
     queryset = Post.objects.all().filter(
         approved=True).order_by('-created_date')
 
-
-# Count user posts
-def user_post_count():
-    model = Post
-    for word in wordart_list:
-        if user.id == author.id:
-            return word.count
+    # Count user posts
+    def get_context_data(self, **kwargs):
+        context = super(generic.ListView, self).get_context_data(**kwargs)
+        context['counter'] = 0
+        for word in self.queryset:
+            if self.request.user.id == word.author.id:
+                context['counter'] += 1
+        return context
