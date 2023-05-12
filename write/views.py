@@ -234,3 +234,12 @@ class UserDashboard(generic.ListView):
             if self.request.user.id == word.author.id:
                 context['counter'] += 1
         return context
+
+
+# Error handling
+def hadler404(request, *args, **kwargs):
+    return render(request, '404.html')
+
+
+def hadler500(request, *args, **kwargs):
+    return render(request, '500.html')

@@ -39,3 +39,6 @@ urlpatterns = [
         ),
     path("accounts/", include("allauth.urls")),
 ]
+
+hadler404 = 'write.views.handler404'
+hadler500 = 'write.views.handler500'
