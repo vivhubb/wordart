@@ -29,6 +29,8 @@ As for my **4th** Portfolio Project with [Code Institute](https://codeinstitute.
         - [**Automatic Emails**](#automatic-emails)
     - [**Future Features**](#future-features)
     - [**Technologies Used**](#technologies-used)
+        - [**Languages**](#languages)
+        - [**Frameworks & Software**](#frameworks--software)
     - [**Supporting Libraries**](#supporting-libraries)
     - [**Testing**](#testing)
         - [**Manual Testing**](#manual-testing)
@@ -50,7 +52,7 @@ I love reading all kinds of things like books, short stories, poems, quotes. Rea
 <br/>
 The objective of this app would be to provide a user-friendly platform for users to find, share, and discuss their favorite quotes and poems, while also allowing them to connect with other like-minded individuals.
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ## **User Experience UX**
 ### **User Stories**
@@ -88,7 +90,7 @@ The objective of this app would be to provide a user-friendly platform for users
 | As an Admin | i receive email notifications so that i can keep track of what is happening on the website | &check; |
 | As an Admin | i receive email notifications so that i can keep track of what is happening on the website | &check; |
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Wireframes**
 
@@ -101,7 +103,7 @@ The WIREFRAMES for WordArt were created with [Wireframe.cc](https://wireframe.cc
 * Mobile <br>
 ![Mobile](static/images/wireframe2.png)
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Site Structure**
 
@@ -114,7 +116,7 @@ The WordArt website has 2 main pages when accessed by a user who is not logged i
 * Admin dashboard:
     - The admin dashboard is only accessible by the superuser. The purpose is to manage and maintain the website content.
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Design Choices**
 * **Typography**
@@ -133,7 +135,7 @@ The color scheme visualisation was made using [Coolors](https://coolors.co/).
 
 ![color scheme](static/images/color_scheme.png)
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Project Management**
 
@@ -150,7 +152,7 @@ GitHub project board helped me to:
 
 Overall, using GitHub project board helped me to stay organized and focused throughout the project.
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ## **Existing Features**
 ### **Navigation**
@@ -179,7 +181,7 @@ The navigation bar is also responsive based on the device screen size. After bre
 
 ![navbar-small](static/images/navbar_small.png)
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Pages**
 
@@ -227,14 +229,14 @@ If the user logged in is a superuser, this is the place where they can manage th
 
 This page will redirect to the default Django Administration website provided by Django.
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Footer**
 
 The footer section contains contact and a cpoyright information.
 ![footer](static/images/footer.png)
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Account Creation**
 
@@ -251,7 +253,7 @@ To enable users to be able to create an account on the website, I used a package
 
 </details><br/>
 
-[Back to TOP](<#table-of-contents>)
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Admin Dashboard**
 ### **User Dashboard**
@@ -268,16 +270,28 @@ For this project i found it useful to implement automated emails for a further f
 
 ![confirm registration](static/images/confirmation.png)
 
+[JUMP to TOP](<#table-of-contents>)
+
 ## **Future Features**
 
 For the future i am planning to split the **quotes** and **poems** into two different pages and implement a **search by keywords feature**. I would also like to further **customize the superuser dashboard** and create a simple **admin dashboard** for staff.
 
+[JUMP to TOP](<#table-of-contents>)
+
 ## **Technologies Used**
 
-CSS3 - Provides the styling for the website.
-HTML5 - Provides the content and structure for the website.
-JavaScript - Provides interactive elements of the website
-Python - Provides the functionality for the site.
+### **Languages**
+
+[CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
+
+[HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) - Provides the content and structure for the website.
+[JavaScript](https://www.javascript.com/) - Provides interactive elements of the website.
+
+[Python](https://www.python.org/) - Provides the functionality for the site.
+
+[JUMP to TOP](<#table-of-contents>)
+
+### **Frameworks & Software**
 
 [Bootstrap](https://getbootstrap.com/) - CSS framework directed at responsive, mobile-first front-end web development.
 
@@ -311,8 +325,50 @@ Python - Provides the functionality for the site.
 
 [Wireframes.cc](https://wireframe.cc/) - Used to create the wireframes.
 
+[JUMP to TOP](<#table-of-contents>)
 
 ## **Supporting Libraries**
+
+***asgiref***: ASGI framework used for building Python web applications and servers.
+
+***cloudinary***: Image and video management cloud platform for developers.
+
+***dj-database-url***: Utility library for parsing database connection URLs in Django projects.
+
+***dj3-cloudinary-storage***: Cloudinary file storage engine for Django 3.0 and higher.
+
+***Django***: High-level Python web framework for rapid development of secure and maintainable websites.
+
+***django-allauth***: Authentication app for Django
+
+***django-crispy-forms***: DRY Django forms library to build beautiful bootstrap forms easily and without re-inventing the wheel.
+
+***django-sequences***: Implementation of unique sequences for Django models.
+
+***django-summernote***: WYSIWYG editor for Django, using the Summernote JavaScript library.
+
+***gunicorn***: Python WSGI HTTP Server for UNIX.
+
+***oauthlib***: OAuth 1.0 and 2.0 support for Python.
+
+***psycopg2***: PostgreSQL database adapter for Python.
+
+***PyJWT***: JSON Web Token implementation in Python.
+
+***python-slugify***: A Python library that simplifies the generation of URL slugs for Unicode strings.
+
+***python3-openid***: OpenID support for modern servers and consumers.
+
+***pytz***: World timezone definitions, modern and historical.
+
+***requests-oauthlib***: OAuth library for Python requests.
+
+***sqlparse***: Non-validating SQL parser for Python.
+
+***text-unidecode***: ASCII transliterations of Unicode text.
+
+[JUMP to TOP](<#table-of-contents>)
+
 ## **Testing**
 ### **Manual Testing**
 ### **Code Validation**
