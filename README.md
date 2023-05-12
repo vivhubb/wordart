@@ -25,6 +25,7 @@ As for my **4th** Portfolio Project with [Code Institute](https://codeinstitute.
         - [**Footer**](#footer)
         - [**Account Creation**](#account-creation)
         - [**Admin Dashboard**](#admin-dashboard)
+        - [**User Dashboard**](#user-dashboard)
         - [**Automatic Emails**](#automatic-emails)
     - [**Future Features**](#future-features)
     - [**Technologies Used**](#technologies-used)
@@ -129,12 +130,27 @@ The color scheme visualisation was made using [Coolors](https://coolors.co/).
 ![color scheme](static/images/color_scheme.png)
 
 ### **Project Management**
+
+Throughout the building of this project i have used GitHub project board to manage the workflow. This tool helped me organize and prioritize my work. With GitHub project board, I was able to create a visual representation of the project's tasks, workflows, and progress.
+
+GitHub project board was divided into three columns: "To Do", "In Progress", and "Done". I have created issues within github for each user story and added labels to each to indicate the priority and status of the task.
+
+GitHub project board helped me to:
+* keep track of my progress and stay on track with the deadlines.
+* prioritize tasks based on their importance and urgency.
+* easily move tasks between columns as they were completed
+
+![GitHub project borad](static/images/project_board.png)
+
+Overall, using GitHub project board helped me to stay organized and focused throughout the project.
+
 ## **Existing Features**
 ### **Navigation**
 ### **Pages**
 ### **Footer**
 ### **Account Creation**
 ### **Admin Dashboard**
+### **User Dashboard**
 ### **Automatic Emails**
 ## **Future Features**
 ## **Technologies Used**
