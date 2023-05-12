@@ -103,6 +103,7 @@ def add_wordart(request):
     form = WordArtForm(request.POST or None)
     if form.is_valid():
         form.instance.author = User.objects.get(username=request.user.username)
+        form.instance.content = form.clean_content()
         form.save()
         form.instance.slug = slugify(form.instance.title) + '-' + str(form.instance.id)
         form.save()

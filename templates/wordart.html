@@ -16,20 +16,17 @@
                     {% for word in wordart_list %}
                     <div class="col-md-4">
                         <div class="card mb-4">
-                            <div class="card-body rounded" style="background-color: #B0B6BF; height: 270px">
-                                <div class="card-title">
-                                    <a href="{% url 'post_detail' word.slug %}" class="text-dark">
-                                        <u><strong> {{ word.title }} </strong></u>
-                                    </a>
-                                </div>
+                            <div class="card-body rounded" style="background-color: #B0B6BF; height: 170px">
                                 <div class="card_subtitle">
                                     <small> Category: {{ word.get_category_display }} </small>
                                 </div>
-                                <div class="card-text">
-                                    <p> {{ word.excerpt}} </p>
+                                <div class="card-title">
+                                    <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                                        <u><strong> {{ word.title }} </strong> by {{ word.creator }}</u>
+                                    </a>
                                 </div>
+                                <br>
                                 <div>
-                                    <p>- {{ word.creator }} </p>
                                     <i class="fa-solid fa-heart"></i> {{ word.likes.count }} &nbsp
                                     <i class="fa-solid fa-comments"></i> {{ word.number_of_comments }}
                                     <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>

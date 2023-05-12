@@ -1,4 +1,3 @@
-import re
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ModelForm
@@ -35,13 +34,6 @@ class Post(models.Model):
 
     def number_of_comments(self):
         return self.comments.filter(approved=True).count()
-
-    def excerpt(self):
-        cleaned_content = re.sub(r'<.*?>', '', self.content)
-        word_list = cleaned_content.split()
-        if len(word_list) >= 22:
-            return ' '.join(word_list[:22]) + '....'
-        return cleaned_content
 
 
 class Comment(models.Model):
