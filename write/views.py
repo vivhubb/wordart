@@ -224,3 +224,11 @@ class UserDashboard(generic.ListView):
     template_name = 'user_dashboard.html'
     queryset = Post.objects.all().filter(
         approved=True).order_by('-created_date')
+
+
+# Count user posts
+def user_post_count():
+    model = Post
+    for word in wordart_list:
+        if user.id == author.id:
+            return word.count

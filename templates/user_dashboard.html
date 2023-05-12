@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% for word in user_wordart_list %}
+<!-- {% for word in user_wordart_list %}
     {% if user.id == word.author.id %}
     <hr>
     <div class="container-fluid">
@@ -24,6 +24,44 @@
     </div>
     <hr>
     {% endif %}
-{% endfor %}
+{% endfor %} -->
+
+<!-- WORDART LIST -->
+<div class="container-fluid">
+    <div class="row">
+        <h4 class="p-2" style="float: left;"><strong>Your WordArt list</strong> ({{ word.count }}):</h4>
+        <div class="col-12 mt-3">
+            <div class="row">
+                {% for word in user_wordart_list %}
+                    {% if user.id == word.author.id %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body rounded" style="background-color: #B0B6BF; height: 150px">
+                                <div class="card_subtitle">
+                                    <small> Category: {{ word.get_category_display }} </small>
+                                </div>
+                                <div class="card-title">
+                                    <a href="{% url 'post_detail' word.slug %}" class="text-dark">
+                                        <u><strong> {{ word.title }} </strong>by {{ word.creator }}</u>
+                                    </a>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-heart"></i> {{ word.likes.count }} &nbsp
+                                    <i class="fa-solid fa-comments"></i> {{ word.number_of_comments }}
+                                    <p><small> Post created on: {{ word.created_date }} by: {{ word.author }} </small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        {% if forloop.counter|divisibleby:1 %}
+                </div>
+                <div class="row">
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

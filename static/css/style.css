@@ -6,7 +6,15 @@ body {
     padding-bottom: 70px;
 }
 
-/* .card-body {
-    height: 60px;
-    color: #70706D;
+/* current page */
+/* 
+.current {
+    text-decoration: none;
+    text-transform: uppercase;
+    list-style-type: none;
+    display: inline-block;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 0.2em;
+    font-size: 1.1em;
 } */
