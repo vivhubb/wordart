@@ -101,6 +101,8 @@ The WIREFRAMES for WordArt were created with [Wireframe.cc](https://wireframe.cc
 * Mobile <br>
 ![Mobile](static/images/wireframe2.png)
 
+[Back to TOP](<#table-of-contents>)
+
 ### **Site Structure**
 
 The WordArt website has 2 main pages when accessed by a user who is not logged in and 4 pages when the user is logged in.
@@ -111,6 +113,8 @@ The WordArt website has 2 main pages when accessed by a user who is not logged i
 
 * Admin dashboard:
     - The admin dashboard is only accessible by the superuser. The purpose is to manage and maintain the website content.
+
+[Back to TOP](<#table-of-contents>)
 
 ### **Design Choices**
 * **Typography**
@@ -129,6 +133,8 @@ The color scheme visualisation was made using [Coolors](https://coolors.co/).
 
 ![color scheme](static/images/color_scheme.png)
 
+[Back to TOP](<#table-of-contents>)
+
 ### **Project Management**
 
 Throughout the building of this project i have used GitHub project board to manage the workflow. This tool helped me organize and prioritize my work. With GitHub project board, I was able to create a visual representation of the project's tasks, workflows, and progress.
@@ -144,6 +150,8 @@ GitHub project board helped me to:
 
 Overall, using GitHub project board helped me to stay organized and focused throughout the project.
 
+[Back to TOP](<#table-of-contents>)
+
 ## **Existing Features**
 ### **Navigation**
 
@@ -152,7 +160,7 @@ Placed at the top left corner of the page it displays the name of the website: *
 
 * **Navigation bar**
 
-The navigation bar is displayed differeently depending on the user being logged in as well as if the user is a superuser or not. The navigation bar is also responsive based on the device screen size. After breakpoint it collapses into dropdown menu.
+The navigation bar is displayed differeently depending on the user being logged in as well as if the user is a superuser or not.
 
 |    |About|WordArt|Sign up|Login|Logout|User dashboard|Admin dashboard|
 |:----|:----|:----|:----|:----|:----|:----|:----|
@@ -167,7 +175,58 @@ The navigation bar is displayed differeently depending on the user being logged 
 * Superuser logged in
 ![Superuser logged in](static/images/navbar_superuser.png)
 
+The navigation bar is also responsive based on the device screen size. After breakpoint it collapses into dropdown menu.
+
+![navbar-small](static/images/navbar_small.png)
+
+[Back to TOP](<#table-of-contents>)
+
 ### **Pages**
+
+* About
+
+This is the page that welcomes the user upon accessing the website. There is a brief overview of what the site is about and how to join the community.
+
+![about](static/images/about.png)
+
+* WordArt
+
+This page contains all quotes and poems posted on the website. These can be viewed without the user being logged in. 
+
+* Sign up
+
+For creating an account, the user can sign up here.
+![signup](static/images/signup.png)
+
+* Login
+
+Once account has been created the user can login on this page.
+![login](static/images/login.png)
+
+* Logout
+
+If the user wishes to logout, this can be done here by confirming this action.
+![logout](static/images/logout.png)
+
+Actions like Sign up, Login, Sign out, Post are all confirmed to the user with a success message that disappears automatically after a short time.
+
+* Login
+![success](static/images/success0.png)
+* Logout
+![success1](static/images/success1.png)
+* Create Post
+![success2](static/images/success2.png)
+
+* **User dashboard**
+
+Once user account has been created and the user is logged in they gain access to their own user dashborad where they can view and manage all posts made by them.
+
+* **Admin dashboard**
+
+If the user logged in is a superuser, this is the place where they can manage the site from. They are able to approve/disapprove posts, comments and/or users. This dashboard is for managing and maintaining the website.
+
+This page will redirect to the default Django Administration website provided by Django.
+
 ### **Footer**
 ### **Account Creation**
 ### **Admin Dashboard**

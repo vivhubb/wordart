@@ -22,3 +22,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("account/", include("allauth.urls")),
 ]
+
+admin.site.site_header = "DJANGO WordArt"
+admin.site.site_title = "WordArt"
+admin.site.index_title = "WordArt administration"
