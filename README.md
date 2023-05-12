@@ -227,13 +227,30 @@ If the user logged in is a superuser, this is the place where they can manage th
 
 This page will redirect to the default Django Administration website provided by Django.
 
+[Back to TOP](<#table-of-contents>)
+
 ### **Footer**
 
 The footer section contains contact and a cpoyright information.
 ![footer](static/images/footer.png)
 
+[Back to TOP](<#table-of-contents>)
 
 ### **Account Creation**
+
+To enable users to be able to create an account on the website, I used a package called Django AllAuth and then customised the html pages to fit the theme of the website.
+
+<details><summary><b>Signup image</b></summary>
+
+![signup](static/images/signup.png)
+
+</details><br/>
+<details><summary><b>Login image</b></summary>
+
+![login](static/images/login.png)
+
+</details><br/>
+
 ### **Admin Dashboard**
 ### **User Dashboard**
 ### **Automatic Emails**
