@@ -371,6 +371,44 @@ For the future i am planning to split the **quotes** and **poems** into two diff
 
 ## **Testing**
 ### **Manual Testing**
+
+* **Testing user stories**
+
+* As a User	i can view posts so that i can read a quote or a poem
+    * can be accessed on the WordArt page of the website ✓
+* As a User	i can view the likes on each post so that i can see which ones are most appreciated	
+    * can be seen on the WordArt page under each post. ✓
+* As a User	i can select a post so that i can view related comments	
+    * every posts title is a link to a post detail page where comments are displayed ✓
+* As a User	i can read the comment section for each post so that i can see other users' opinion	
+    * on the post detail view the comments are displayed chronologically under each post ✓
+* As a User	i can sign up for an account so that i can be part of the community	
+    * on the right side of the navigation bar there's a link to the signup page ✓
+* As a User	i can login into my account so that i can like, comment and post 
+    * on the right side of the navigation bar there's a link to the login page ✓
+* As a User	i can post a quote or poem so that i can contribute to the website
+    * for logged in users there is the 'create new post' page  ✓
+* As a User	i can like or unlike a post so that i can show appreciation	
+    * posts can be liked from the post detail view using the heart ✓
+* As a User	i can leave comments on a post so that i can interact with the content and other users
+    * ✓
+As a User	i can create, read, update and delete my posts so that i can amend my content	✓
+As a User	i can edit my comments so that i can rectify any mistakes or amend if changed my mind	✓
+As a User	i can edit a post so that i can control my content	✓
+As a User	i can delete my posts so that i can control my content	✓
+As a User	i can edit my comment so that i can correct any mistakes	✓
+As a User	i can delete my comment so that i can remove them	✓
+As a User	i receive email confirmation of my registration so that i know it was successful	✓
+As a User	i can select a category so that i can choose what i want to read	X
+Admin
+As an Admin	i have a dashboard so that i can control the site's content	✓
+As an Admin	i can create, read, update and delete posts so that i can manage the site's content	✓
+As an Admin	i can create, read, update and delete posts so that i can manage the comment section	✓
+As an Admin	i can approve or disapprove posts so that i can filter out the content	✓
+As an Admin	i can approve or disapprove comments so that i can filter out the content	✓
+As an Admin	i receive email notifications so that i can keep track of what is happening on the website	✓
+As an Admin	i receive email notifications so that i can keep track of what is happening on the website	✓
+
 ### **Code Validation**
 ### **Lighthouse Testing**
 ## **Bugs**

@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="m-4 p-2">
     <h2><strong>WordArt</strong></h2>
 </div>
@@ -14,7 +16,7 @@
                     {% for word in wordart_list %}
                     <div class="col-md-4">
                         <div class="card mb-4">
-                            <div class="card-body rounded">
+                            <div class="card-body rounded" style="background-color: #B0B6BF; height: 270px">
                                 <div class="card-title">
                                     <a href="{% url 'post_detail' word.slug %}" class="text-dark">
                                         <u><strong> {{ word.title }} </strong></u>
