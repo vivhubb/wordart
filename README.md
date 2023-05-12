@@ -251,10 +251,27 @@ To enable users to be able to create an account on the website, I used a package
 
 </details><br/>
 
+[Back to TOP](<#table-of-contents>)
+
 ### **Admin Dashboard**
 ### **User Dashboard**
+
 ### **Automatic Emails**
+
+For this project i found it useful to implement automated emails for a further form of confirmation or reminder for the user and for the superuser as well.
+
+* Superuser post approval
+
+![approve post](static/images/approval.png)
+
+* User confirm registration
+
+![confirm registration](static/images/confirmation.png)
+
 ## **Future Features**
+
+For the future i am planning to split the **quotes** and **poems** into two different pages and implement a **search by keywords feature**. I would also like to further **customize the superuser dashboard** and create a simple **admin dashboard** for staff.
+
 ## **Technologies Used**
 ## **Supporting Libraries**
 ## **Testing**
