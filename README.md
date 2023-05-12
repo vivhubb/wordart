@@ -273,6 +273,45 @@ For this project i found it useful to implement automated emails for a further f
 For the future i am planning to split the **quotes** and **poems** into two different pages and implement a **search by keywords feature**. I would also like to further **customize the superuser dashboard** and create a simple **admin dashboard** for staff.
 
 ## **Technologies Used**
+
+CSS3 - Provides the styling for the website.
+HTML5 - Provides the content and structure for the website.
+JavaScript - Provides interactive elements of the website
+Python - Provides the functionality for the site.
+
+[Bootstrap](https://getbootstrap.com/) - CSS framework directed at responsive, mobile-first front-end web development.
+
+[Cloudinary](https://cloudinary.com/) - Used to host all static files.
+
+[Colorpicker](https://imagecolorpicker.com/en) - Used to create the colorscheme of the project.
+
+[CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code.
+
+[Django](https://www.djangoproject.com/) - A model-view-template framework used to create WordArt.
+
+[GitBash](https://www.atlassian.com/git/tutorials/git-bash) - Terminal used to push changes to the GitHub repository.
+
+[GitHub](https://github.com/) - Used to host and deploy the website.
+
+[Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to test responsiveness and debug.
+
+[Heroku](https://dashboard.heroku.com/apps) - Used to deploy the website.
+
+[HTML Validation](https://validator.w3.org/) - Used to validate HTML code.
+
+[JSHint Validation](https://jshint.com/) - Used to validate JavaScript code.
+
+[Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - Used to test performance of site.
+
+[Microsoft Excel](https://www.microsoft.com/en-gb/microsoft-365/excel) - Used to create model mockups.
+
+[PEP8 Validation](http://ww7.pep8online.com/) - Used to validate Python code.
+
+[VSCode](https://code.visualstudio.com/) - Used to create and edit the website.
+
+[Wireframes.cc](https://wireframe.cc/) - Used to create the wireframes.
+
+
 ## **Supporting Libraries**
 ## **Testing**
 ### **Manual Testing**
