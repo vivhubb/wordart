@@ -146,6 +146,27 @@ Overall, using GitHub project board helped me to stay organized and focused thro
 
 ## **Existing Features**
 ### **Navigation**
+
+* **Title**
+Placed at the top left corner of the page it displays the name of the website: **WordArt** which also links to the About (home) page.
+
+* **Navigation bar**
+
+The navigation bar is displayed differeently depending on the user being logged in as well as if the user is a superuser or not. The navigation bar is also responsive based on the device screen size. After breakpoint it collapses into dropdown menu.
+
+|    |About|WordArt|Sign up|Login|Logout|User dashboard|Admin dashboard|
+|:----|:----|:----|:----|:----|:----|:----|:----|
+|**Not logged in**|&check;|&check;|&check;|&check;|X|X|X|
+|**User logged in**|&check;|&check;|X|X|&check;|&check;|X|
+|**Superuser logged in**|&check;|&check;|X|X|&check;|X|&check;|
+
+* Not logged in
+![Not logged in](static/images/navbar.png)
+* User logged in
+![User logged in](static/images/navbar_user.png)
+* Superuser logged in
+![Superuser logged in](static/images/navbar_superuser.png)
+
 ### **Pages**
 ### **Footer**
 ### **Account Creation**
