@@ -228,6 +228,11 @@ If the user logged in is a superuser, this is the place where they can manage th
 This page will redirect to the default Django Administration website provided by Django.
 
 ### **Footer**
+
+The footer section contains contact and a cpoyright information.
+![footer](static/images/footer.png)
+
+
 ### **Account Creation**
 ### **Admin Dashboard**
 ### **User Dashboard**
