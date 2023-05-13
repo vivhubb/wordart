@@ -317,7 +317,7 @@ For the future i am planning to split the **quotes** and **poems** into two diff
 
 [Microsoft Excel](https://www.microsoft.com/en-gb/microsoft-365/excel) - Used to create model mockups.
 
-[PEP8 Validation](http://ww7.pep8online.com/) - Used to validate Python code.
+[Python syntax Checker PEP8](https://www.pythonchecker.com/) - Used to validate Python code.
 
 [VSCode](https://code.visualstudio.com/) - Used to create and edit the website.
 
@@ -417,9 +417,105 @@ For the future i am planning to split the **quotes** and **poems** into two diff
 
 ### **Code Validation**
 
-The WordArt code has been tested with:
+The WordArt code has been validated with  [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint JavaScript Validator](https://jshint.com/) and [Python syntax Checker PEP8](https://www.pythonchecker.com/):
 
+<details><summary><b>HTML validation - About page</b></summary>
 
+![signup](static/images/code_validation/html.png)
+
+</details><br/>
+
+<details><summary><b>HTML validation - Wordart page - error</b></summary>
+
+![signup](static/images/code_validation/html_wordart_error.png)
+
+</details><br/>
+
+<details><summary><b>HTML validation - Wordart page - fix</b></summary>
+
+![signup](static/images/code_validation/html_wordart_error_fix.png)
+
+</details><br/>
+
+<details><summary><b>HTML validation - Signup page</b></summary>
+
+![signup](static/images/code_validation/html_signup.png)
+
+</details><br/>
+
+<details><summary><b>HTML validation - Login page</b></summary>
+
+![signup](static/images/code_validation/html_login.png)
+
+</details><br/>
+
+<details><summary><b>HTML validation - Logout page</b></summary>
+
+![signup](static/images/code_validation/html_logout.png)
+
+</details><br/>
+
+<details><summary><b>HTML validation - User dashboard page</b></summary>
+
+![signup](static/images/code_validation/html_user.png)
+
+</details><br/>
+
+<details><summary><b>HTML validation - Create new post page</b></summary>
+
+![signup](static/images/code_validation/html_create.png)
+
+</details><br/>
+
+<details><summary><b>CSS validation</b></summary>
+
+![signup](static/images/code_validation/css.png)
+
+</details><br/>
+
+<details><summary><b>JS validation</b></summary>
+
+![signup](static/images/code_validation/js.png)
+
+</details><br/>
+
+<details><summary><b>Python syntax Checker PEP8 (write/admin.py)</b></summary>
+
+![signup](static/images/code_validation/admin_py.png)
+
+</details><br/>
+
+<details><summary><b>Python syntax Checker PEP8 (write/apps.py)</b></summary>
+
+![signup](static/images/code_validation/apps_py.png)
+
+</details><br/>
+
+<details><summary><b>Python syntax Checker PEP8 (write/forms.py)</b></summary>
+
+![signup](static/images/code_validation/forms_py.png)
+
+</details><br/>
+
+<details><summary><b>Python syntax Checker PEP8 (write/models.py)</b></summary>
+
+![signup](static/images/code_validation/models_py.png)
+
+</details><br/>
+
+<details><summary><b>Python syntax Checker PEP8 (write/urls.py)</b></summary>
+
+![signup](static/images/code_validation/urls_py.png)
+
+</details><br/>
+
+<details><summary><b>Python syntax Checker PEP8 (write/views.py)</b></summary>
+
+![signup](static/images/code_validation/views_py.png)
+
+</details><br/>
+
+[JUMP to TOP](<#table-of-contents>)
 
 ### **Lighthouse Testing**
 ## **Bugs**
