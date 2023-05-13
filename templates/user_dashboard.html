@@ -10,9 +10,9 @@
             <div class="row">
                 {% for word in user_wordart_list %}
                     {% if user.id == word.author.id %}
-                    <div class="col-md-4">
+                    <div class="col-lg-6 col-md-6">
                         <div class="card mb-4">
-                            <div class="card-body rounded" style="background-color: #B0B6BF; height: 170px">
+                            <div class="card-body rounded" style="border: 2px dotted #383c44; background-color: #e4ddce; height: 170px">
                                 <div class="card_subtitle">
                                     <small> Category: {{ word.get_category_display }} </small>
                                 </div>
