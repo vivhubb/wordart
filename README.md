@@ -518,8 +518,51 @@ The WordArt code has been validated with  [W3C HTML Validator](https://validator
 [JUMP to TOP](<#table-of-contents>)
 
 ### **Lighthouse Testing**
+<br>
 
+<details><summary><b>About Page</b></summary>
 
+![signup](static/images/lighthouse/about.png)
+
+</details><br/>
+
+<details><summary><b>Create New Post Page</b></summary>
+
+![signup](static/images/lighthouse/create.png)
+
+</details><br/>
+
+<details><summary><b>Signup Page</b></summary>
+
+![signup](static/images/lighthouse/signup.png)
+
+</details><br/>
+
+<details><summary><b>Login Page</b></summary>
+
+![signup](static/images/lighthouse/login.png)
+
+</details><br/>
+
+<details><summary><b>Logout Page</b></summary>
+
+![signup](static/images/lighthouse/logout.png)
+
+</details><br/>
+
+<details><summary><b>User dashboard Page</b></summary>
+
+![signup](static/images/lighthouse/user.png)
+
+</details><br/>
+
+<details><summary><b>WordArt Page</b></summary>
+
+![signup](static/images/lighthouse/wordart.png)
+
+</details><br/>
+
+[JUMP to TOP](<#table-of-contents>)
 
 ## **Bugs**
 ## **Deployment**
