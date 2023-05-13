@@ -589,6 +589,8 @@ There are no detected bugs with the deployed app.
 1. Search and connect to your GitHub repository
 1. Scroll down to **Manual deploy** and click **Deploy Branch**
 
+[JUMP to TOP](<#table-of-contents>)
+
 ## **Credits**
 ### **Content**
 
@@ -629,3 +631,5 @@ There are no detected bugs with the deployed app.
 The website was created for **Code Institute's Full Stack Software Development Diploma Course** as the 4th Milestone Project.
 
 Therefore, I would like to take this opportunity to show my appreciation and thanks to my mentor **Precious Ijege** and the whole of [Code Institute](https://codeinstitute.net/) for all the help and support received throughout the creation of this project.
+
+[JUMP to TOP](<#table-of-contents>)
