@@ -38,6 +38,7 @@ As for my **4th** Portfolio Project with [Code Institute](https://codeinstitute.
         - [**Lighthouse Testing**](#lighthouse-testing)
     - [**Bugs**](#bugs)
     - [**Deployment**](#deployment)
+        - [**Deploying to Heroku**](#deploying-to-heroku)
     - [**Credits**](#credits)
         - [**Content**](#content)
         - [**Media**](#media)
@@ -577,12 +578,54 @@ There are no detected bugs with the deployed app.
 ## **Deployment**
 ### **Deploying to Heroku**
 
+1. In **settings.py** set **Debug to False**
+1. Add your Django application to the **INSTALLED_APPS** section in your **settings.py**
 1. Login to [Heroku](https://dashboard.heroku.com/apps)
 1. On Heroku dashboard click **New** then **Create new app**
-1. Provide an **app name** and **choose a region**
-
+1. Provide an **app name** and **choose a region** then click **create app**
+1. Find the **Settings tab** and set your **CONFIG VARS**
+1. Find the **Deploy tab**
+1. Choose **Deployment method** as [GitHub](https://github.com/)
+1. Search and connect to your GitHub repository
+1. Scroll down to **Manual deploy** and click **Deploy Branch**
 
 ## **Credits**
 ### **Content**
+
+* [Bootstrap Documentation](https://getbootstrap.com/docs)
+* [Corey Schafer video tutorials](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g)
+* [Bootstrap Documentation](https://freefrontend.com/bootstrap-footers/) -> [Bootstrap Documentation](https://startbootstrap.com/snippets/sticky-footer-flexbox)
+* [W3Schools - Bootstrap](https://www.w3schools.com/bootstrap)
+* Inspired by and based on [Code Institute Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/)
+
+
+* Quotes and Poems
+
+    * [Good Reads](https://www.goodreads.com/quotes/876911-and-the-day-came-when-the-risk-to-remain-tight)
+    * [All Poetry](https://allpoetry.com/poem/8497015-Risk-by-Anais-Nin)
+    * [Poets](https://poets.org/poem/my-life-has-been-poem-i-would-have-writ)
+    * [Good Reads](https://www.goodreads.com/quotes/638439-it-would-have-been-better-to-come-back-at-the)
+    * [Good Reads](https://www.goodreads.com/quotes/9992993-this-heart-of-yours-is-asking-for-time-to-be)
+    * [Poetry foundation](https://www.poetryfoundation.org/poems/47536/one-art)
+    * [Hello poetry](https://hellopoetry.com/poem/1590/i-like-my-body-when-it-is-with-your/)
+    * [NewYorker](https://www.newyorker.com/magazine/2015/02/16/lit-2)
+    * [Blog hubspot](https://blog.hubspot.com/sales/famous-quotes)
+    * [Poetrynook](https://www.poetrynook.com/poem/even-rain)
+    * [DZone](https://dzone.com/articles/best-programming-jokes-amp-quotes)
+
 ### **Media**
+
+* Images came from [Pexels](pexels.com)
+* Google Font used in the project came from [Google Fonts](https://fonts.google.com/specimen/Kalam/about)
+* Favicon was generated with [Favicon generator](https://realfavicongenerator.net/)
+* Images were compressed using [Image Compressor](https://imagecompressor.com/)
+* Images were converted using [JPG to PNG](https://jpg2png.com/)
+* Wireframes were created with [Wireframes.cc](https://wireframe.cc/)
+
+[JUMP to TOP](<#table-of-contents>)
+
 ## **Recognition**
+
+The website was created for **Code Institute's Full Stack Software Development Diploma Course** as the 4th Milestone Project.
+
+Therefore, I would like to take this opportunity to show my appreciation and thanks to my mentor **Precious Ijege** and the whole of [Code Institute](https://codeinstitute.net/) for all the help and support received throughout the creation of this project.
