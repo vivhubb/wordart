@@ -575,6 +575,13 @@ The WordArt code has been validated with  [W3C HTML Validator](https://validator
 There are no detected bugs with the deployed app.
 
 ## **Deployment**
+### **Deploying to Heroku**
+
+1. Login to [Heroku](https://dashboard.heroku.com/apps)
+1. On Heroku dashboard click **New** then **Create new app**
+1. Provide an **app name** and **choose a region**
+
+
 ## **Credits**
 ### **Content**
 ### **Media**
