@@ -301,6 +301,8 @@ For the future i am planning to split the **quotes** and **poems** into two diff
 
 [Django](https://www.djangoproject.com/) - A model-view-template framework used to create WordArt.
 
+[Favicon generator](https://realfavicongenerator.net/) - Used to generate favicon
+
 [GitBash](https://www.atlassian.com/git/tutorials/git-bash) - Terminal used to push changes to the GitHub repository.
 
 [GitHub](https://github.com/) - Used to host and deploy the website.
@@ -310,6 +312,10 @@ For the future i am planning to split the **quotes** and **poems** into two diff
 [Heroku](https://dashboard.heroku.com/apps) - Used to deploy the website.
 
 [HTML Validation](https://validator.w3.org/) - Used to validate HTML code.
+
+[Image Compressor](https://imagecompressor.com/) - Used to compress images
+
+[JPG to PNG](https://jpg2png.com/) - Used to convert images
 
 [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code.
 
@@ -565,6 +571,9 @@ The WordArt code has been validated with  [W3C HTML Validator](https://validator
 [JUMP to TOP](<#table-of-contents>)
 
 ## **Bugs**
+
+There are no detected bugs with the deployed app.
+
 ## **Deployment**
 ## **Credits**
 ### **Content**
