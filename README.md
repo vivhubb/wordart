@@ -518,6 +518,9 @@ The WordArt code has been validated with  [W3C HTML Validator](https://validator
 [JUMP to TOP](<#table-of-contents>)
 
 ### **Lighthouse Testing**
+
+
+
 ## **Bugs**
 ## **Deployment**
 ## **Credits**
